@@ -1,7 +1,7 @@
 #include "Transaction.h"
 
-Transaction::Transaction(string transid, int transType)
+Transaction::Transaction(string transid, string type)
 {
-	transactionType = type(transType);
+	transactionType = type;
 	id = transid;
 }

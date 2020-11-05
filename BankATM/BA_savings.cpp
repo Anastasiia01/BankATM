@@ -9,7 +9,7 @@ bool BA_savings::Deposit(double checkAmount) {
 }
 
 
-bool BA_savings::Transfer(double amount, Account * receiverAccount) {
+bool BA_savings::Transfer(double amount, BusinessAccount* receiverAccount) {
 	return false;
 }
 
@@ -18,11 +18,6 @@ bool BA_savings::Withdraw(double amount) {
 	return false;
 }
 
-void BA_savings::ApplyInterest() {
-	
-}
-
-void BA_savings::display()
-{
-	cout << "Account type is Business Saving " << endl;
+bool BA_savings::ApplyInterest() {
+	return false;
 }

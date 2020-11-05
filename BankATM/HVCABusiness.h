@@ -23,10 +23,8 @@ private:
 public:
 	HVCABusiness();
 	bool Deposit(double checkAmount);
-	bool Withdraw(double amount);
-	bool Transfer(double amount, Account * receiverAccount);
-	void ApplyInterest();
-	void display();
+	bool Withdraw(double amount, BA_Checking * receiverAccount);
+	bool Transfer(double amount);
 	//void Transaction();
 
 };

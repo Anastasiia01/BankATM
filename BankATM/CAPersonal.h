@@ -8,9 +8,6 @@
 #include <sstream>
 #include <set>
 #include "PersonalAccount.h"
-#include "Account.h"
-#ifndef CAPERSONAL_H_
-#define CAPERSONAL_H_
 
 
 using namespace std;
@@ -27,11 +24,7 @@ private:
 public:
 	CAPersonal();
 	bool Deposit(double checkAmount);
-	bool Transfer(double amount, Account* receiverAccount);
+	bool Transfer(double amount, PersonalAccount* receiverAccount);
 	bool Withdraw(double amount);
-	void ApplyInterest();
-	void display();
 	//void Transaction();
 };
-#endif
-

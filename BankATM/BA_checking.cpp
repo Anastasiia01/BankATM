@@ -9,24 +9,22 @@ bool BA_checking::Deposit(double checkAmount)
 	return false;
 }
 
-bool BA_checking::Withdraw(double amount)
+bool BA_checking::Withdraw(double amount, BA_checking* receiverAccount)
 {
 	return false;
 }
 
-
-
-bool BA_checking::Transfer(double amount, Account * receiverAccount)
+bool BA_checking::Transfer(double amount)
 {
 	return false;
 }
-
-void BA_checking::ApplyInterest()
-{
+void ApplyInterest() {
 
 }
 
-void BA_checking::display()
-{
+void display() {
+
+	BusinessAccount::display();
 	cout << "Account type is Business Checking " << endl;
+
 }

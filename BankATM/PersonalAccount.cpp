@@ -7,10 +7,6 @@ PersonalAccount::PersonalAccount(string fn, string ln)//implicitly calls Account
 	SSN = generateSSN();
 }
 
-PersonalAccount::PersonalAccount()
-{
-}
-
 int PersonalAccount::generateSSN() {
 	//TODO: implement random generation of SSN 
 	return 123456789;

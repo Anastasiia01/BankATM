@@ -8,8 +8,7 @@
 #include <sstream>
 #include <set>
 #include "PersonalAccount.h"
-#ifndef SAPERSONAL_H_
-#define SAPERSONAL_H_
+
 using namespace std;
 
 class SAPersonal: public PersonalAccount //Modifiy according to parent class name given 
@@ -25,11 +24,9 @@ private:
 public:
 	SAPersonal();
 	bool Deposit(double checkAmount);
-	bool Transfer(double amount, Account * receiverAccount);
+	bool Transfer(double amount, PersonalAccount* receiverAccount);
 	bool Withdraw(double amount);
-	void ApplyInterest();
-	void display();
+	bool ApplyInterest();
 	//void Transaction();
 };
-#endif
 

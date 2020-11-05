@@ -7,9 +7,6 @@
 #include <sstream>
 #include <set>
 #include "BusinessAccount.h"
-# include "Account.h"
-#ifndef BA_CHECKING_H_
-#define BA_CHECKING_H_
 
 using namespace std;
 
@@ -30,4 +27,3 @@ class BA_checking :public BusinessAccount {
 		void ApplyInterest();
 		void display();
 };
-#endif

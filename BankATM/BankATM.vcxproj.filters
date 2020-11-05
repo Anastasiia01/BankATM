@@ -30,24 +30,6 @@
     <ClInclude Include="PersonalMoneyMarket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BA_checking.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BA_savings.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CAPersonal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FCABusiness.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HVCABusiness.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SAPersonal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PersonalCD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,30 +45,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PersonalMoneyMarket.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BA_checking.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BA_savings.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BusinessAccount.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CAPersonal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Driver.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FCABusiness.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HVCABusiness.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SAPersonal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PersonalCD.cpp">
