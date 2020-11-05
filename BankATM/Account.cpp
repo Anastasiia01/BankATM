@@ -22,7 +22,7 @@ bool Account::Deposit(double checkAmount)
 
 	//Next three lines add transaction to history
 	int transCount = history.size();
-	Transaction trans(to_string(transCount), 0);
+	Transaction trans(to_string(transCount), "Deposit");
 	history.push_back(trans); //need to get const
 
 	//do deposit
@@ -38,9 +38,13 @@ bool Account::Deposit(double checkAmount)
 
 bool Account::Transfer(double amount, Account* receiverAccount)
 {
+	/*Implements one time transfer of the given amount from the object account to the receiverAccount.
+	Return true upon success of transaction, false if transaction didn't happen 
+	due to lack of money or invalid account*/
+
 	//Next three lines add transaction to history
 	int transCount = history.size();
-	Transaction trans(to_string(transCount), 1);
+	Transaction trans(to_string(transCount), "Transfer");
 	history.push_back(trans);
 
 	//check if receiver exists and amount is positive
@@ -63,11 +67,11 @@ bool Account::Transfer(double amount, Account* receiverAccount)
 
 }
 
-bool Account::Withdraw(double amount)
+bool Account::Withdraw(double amount) 
 {
 	//Next three lines add transaction to history
 	int transCount = history.size();
-	Transaction trans(to_string(transCount), 2);
+	Transaction trans(to_string(transCount), "Withdraw");
 	history.push_back(trans);
 
 	//do withdraw

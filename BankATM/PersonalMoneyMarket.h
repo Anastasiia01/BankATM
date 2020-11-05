@@ -15,5 +15,6 @@ public:
 	bool Transfer(double amount, Account* receiverAccount);
 	bool Withdraw(double amount);
 	void ApplyInterest();
+	void display();
 
 };
