@@ -9,7 +9,7 @@ bool FCABusiness::Deposit(double checkAmount)
 	return false;
 }
 
-bool FCABusiness::Transfer(double amount, BA_Checking* receiverAccount)
+bool FCABusiness::Transfer(double amount, BA_checking* receiverAccount)
 {
 	return false;
 }
