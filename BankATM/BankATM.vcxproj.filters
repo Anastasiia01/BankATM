@@ -30,9 +30,6 @@
     <ClInclude Include="PersonalMoneyMarket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PersonalCD.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp">
@@ -45,9 +42,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PersonalMoneyMarket.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PersonalCD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

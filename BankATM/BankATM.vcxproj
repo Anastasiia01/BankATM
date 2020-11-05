@@ -141,14 +141,12 @@
     <ClInclude Include="Account.h" />
     <ClInclude Include="BusinessAccount.h" />
     <ClInclude Include="PersonalAccount.h" />
-    <ClInclude Include="PersonalCD.h" />
     <ClInclude Include="PersonalMoneyMarket.h" />
     <ClInclude Include="Transaction.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="PersonalAccount.cpp" />
-    <ClCompile Include="PersonalCD.cpp" />
     <ClCompile Include="PersonalMoneyMarket.cpp" />
     <ClCompile Include="Transaction.cpp" />
   </ItemGroup>
