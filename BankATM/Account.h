@@ -21,5 +21,7 @@ public:
 	virtual bool Transfer(double amount, Account* receiverAccount) = 0;
 	virtual bool Withdraw(double amount) = 0;
 	virtual void ApplyInterest() = 0;
+	virtual void display() = 0;
 	double BalanceInquiry() { return balance; }
+
 };

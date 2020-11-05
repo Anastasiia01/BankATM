@@ -9,7 +9,7 @@ bool HVCABusiness::Deposit(double checkAmount)
 	return false;
 }
 
-bool HVCABusiness::Withdraw(double amount, BA_Checking* receiverAccount)
+bool HVCABusiness::Withdraw(double amount, BA_checking* receiverAccount)
 {
 	return false;
 }
