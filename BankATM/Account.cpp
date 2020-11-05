@@ -89,6 +89,10 @@ void Account::ApplyInterest()
 {
 	//TODO: review the logic of this method
 	balance += balance * interest;
+	//I think the one below applies:
+	//balance +=pow(balance(1+(interest/n)),(n*time)); 
+	//refer tohttps://www.onlinemathlearning.com/simple-interest-formula.html
+
 }
 
 
