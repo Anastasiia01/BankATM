@@ -7,22 +7,24 @@
 #include <vector>
 #include <sstream>
 #include <set>
+#include <PersonalAccount>
+
 
 using namespace std;
 
 class CAPersonal: public PersonalAccount //Modifiy according to parent class name given 
 {
-public:
+private:
 
 	string transactionID;
-	double currentBalance;
 	double depositeAmount;
 	double withdrawAmount;
 	double transferAmount;
 
 public:
-	void Deposit();
-	void Withdraw();
-	void Transfer();
+	CAPersonal();
+	bool Deposit(double checkAmount);
+	bool Transfer(double amount, PersonalAccount* receiverAccount);
+	bool Withdraw(double amount);
 	//void Transaction();
 };

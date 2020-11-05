@@ -1,17 +1,25 @@
 #include "SAPersonal.h"
 
-void SAPersonal::Deposit()
+SAPersonal::SAPersonal()
 {
 }
 
-void SAPersonal::Withdraw()
+bool SAPersonal::Deposit(double checkAmount)
 {
+	return false;
 }
 
-void SAPersonal::Interest()
+bool SAPersonal::Transfer(double amount, PersonalAccount* receiverAccount)
 {
+	return false;
 }
 
-void SAPersonal::Transfer()
+bool SAPersonal::Withdraw(double amount)
 {
+	return false;
+}
+
+bool SAPersonal::ApplyInterest()
+{
+	return false;
 }

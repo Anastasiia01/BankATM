@@ -7,23 +7,24 @@
 #include <vector>
 #include <sstream>
 #include <set>
+#include <BA_checking>
 using namespace std;
 
-class HVCABusiness : public CheckingAccount //Modifiy according to parent class name given 
+class HVCABusiness : public BA_checking //Modifiy according to parent class name given 
 {
 private:
 
 	string transactionID;
 	double transacationFee;
-	double currentBalance;
 	double depositeAmount;
 	double withdrawAmount;
 	double transferAmount;
 
 public:
-	void Deposit();
-	void Withdraw();
-	void Transfer();
+	HVCABusiness();
+	bool Deposit(double checkAmount);
+	bool Withdraw(double amount, BA_Checking * receiverAccount);
+	bool Transfer(double amount);
 	//void Transaction();
 
 };
