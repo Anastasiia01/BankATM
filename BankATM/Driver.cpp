@@ -1,5 +1,17 @@
 #include <iostream>
 #include "Account.h"
+#include "BA_checking.h"
+#include"BA_savings.h"
+#include"BusinessAccount.h"
+#include"CAPersonal.h"
+#include"FCABusiness.h"
+#include "HVCABusiness.h"
+#include "PersonalAccount.h"
+#include "PersonalMoneyMarket.h"
+#include"SAPersonal.h"
+#include"Transaction.h"
+#include "PersonalCD.h"
+
 
 int main()
 {

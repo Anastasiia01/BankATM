@@ -9,6 +9,10 @@
 #include <set>
 #include <list>
 #include "BA_checking.h"
+#ifndef FCABUSINESS_H_
+#define FCABUSINESS_H_
+
+
 using namespace std;
 
 class FCABusiness : public BA_checking //Modifiy according to parent class name given  
@@ -31,9 +35,12 @@ private:
 public:
 	FCABusiness();
 	bool Deposit(double checkAmount);
-	bool Transfer(double amount, BA_checking* receiverAccount);
+	bool Transfer(double amount, Account * receiverAccount);
 	bool Withdraw(double amount);
+	void ApplyInterest();
+	void display();
 	//void Transaction();
 
 
 };
+#endif

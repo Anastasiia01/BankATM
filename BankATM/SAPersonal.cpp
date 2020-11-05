@@ -9,7 +9,7 @@ bool SAPersonal::Deposit(double checkAmount)
 	return false;
 }
 
-bool SAPersonal::Transfer(double amount, PersonalAccount* receiverAccount)
+bool SAPersonal::Transfer(double amount, Account* receiverAccount)
 {
 	return false;
 }
@@ -19,7 +19,13 @@ bool SAPersonal::Withdraw(double amount)
 	return false;
 }
 
-bool SAPersonal::ApplyInterest()
+void SAPersonal::ApplyInterest()
 {
-	return false;
+	
+}
+
+void SAPersonal::display()
+{
+	PersonalAccount::display();
+	cout << "Account type is Personal Saving Account " << endl;
 }

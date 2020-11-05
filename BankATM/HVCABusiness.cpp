@@ -9,12 +9,23 @@ bool HVCABusiness::Deposit(double checkAmount)
 	return false;
 }
 
-bool HVCABusiness::Withdraw(double amount, BA_checking* receiverAccount)
+bool HVCABusiness::Withdraw(double amount)
 {
 	return false;
 }
 
-bool HVCABusiness::Transfer(double amount)
+bool HVCABusiness::Transfer(double amount, Account* receiverAccount)
 {
 	return false;
+}
+
+void HVCABusiness::ApplyInterest()
+{
+	
+}
+
+void HVCABusiness::display()
+{
+	BusinessAccount::display();
+	cout << "Account type is High Volume Checking Account " << endl;
 }

@@ -1,15 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <iterator>
+#include <algorithm>
+#include <vector>
+#include <sstream>
+#include <set>
+#include "Account.h"
+#ifndef BUSINESSACCOUNT_H_
+#define BUSINESSACCOUNT_H_
+
 class BusinessAccount:public Account {
 	//test
 	private:
 		long EIN; //Employer Identification Number
-		String CompanyName;
+		string CompanyName;
 
 	protected:
 		void setEIN(int s) { EIN = s; }
-		void setCompanyName(String nam) { CompanyName = nam};
+		void setCompanyName(string nam) { CompanyName = nam; };
 		
 
 	public:
 		long getEIN() { return EIN; }
-		String getCompanyName() { return CompanyName; }
+		string getCompanyName() { return CompanyName; }
 };
+#endif
