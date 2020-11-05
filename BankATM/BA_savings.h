@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class BA_savings :public BusinessAccount {
+class BA_savings:public BusinessAccount {
 
 private:
 	string transactionID;
@@ -15,6 +15,7 @@ private:
 	double transferAmount;
 
 public:
+	BA_savings();
 	void Deposit();
 	void Withdraw();
 	void Transfer();
