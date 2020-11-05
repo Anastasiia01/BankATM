@@ -139,20 +139,35 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="BA_checking.h" />
+    <ClInclude Include="BA_savings.h" />
     <ClInclude Include="BusinessAccount.h" />
+    <ClInclude Include="CAPersonal.h" />
+    <ClInclude Include="FCABusiness.h" />
+    <ClInclude Include="HVCABusiness.h" />
     <ClInclude Include="PersonalAccount.h" />
-    <ClInclude Include="PersonalCD.h" />
     <ClInclude Include="PersonalMoneyMarket.h" />
+    <ClInclude Include="SAPersonal.h" />
     <ClInclude Include="Transaction.h" />
+    <ClInclude Include="PersonalCD.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="BA_checking.cpp" />
+    <ClCompile Include="BA_savings.cpp" />
+    <ClCompile Include="BusinessAccount.cpp" />
+    <ClCompile Include="CAPersonal.cpp" />
+    <ClCompile Include="Driver.cpp" />
+    <ClCompile Include="FCABusiness.cpp" />
+    <ClCompile Include="HVCABusiness.cpp" />
     <ClCompile Include="PersonalAccount.cpp" />
-    <ClCompile Include="PersonalCD.cpp" />
     <ClCompile Include="PersonalMoneyMarket.cpp" />
+    <ClCompile Include="SAPersonal.cpp" />
     <ClCompile Include="Transaction.cpp" />
+    <ClCompile Include="PersonalCD.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+>>>>>>> dd10ec85dc1fb390dcc447d8027158200afc1629
 </Project>

@@ -1,4 +1,15 @@
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <iterator>
+#include <algorithm>
+#include <vector>
+#include <sstream>
+#include <set>
+#include "Account.h"
 #include "PersonalAccount.h"
+#ifndef PERSONALMONEYMARKET_H_
+#define PERSONALMONEYMARKET_H_
 
 using namespace std;
 
@@ -18,3 +29,4 @@ public:
 	void display();
 
 };
+#endif
