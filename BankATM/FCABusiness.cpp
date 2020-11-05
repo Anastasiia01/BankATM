@@ -1,17 +1,21 @@
 #include "FCABusiness.h"
 
-void FCABusiness::Deposit()
+FCABusiness::FCABusiness()
 {
 }
 
-void FCABusiness::Withdraw()
+bool FCABusiness::Deposit(double checkAmount)
 {
+	return false;
 }
 
-void FCABusiness::Interest()
+bool FCABusiness::Transfer(double amount, BA_Checking* receiverAccount)
 {
+	return false;
 }
 
-void FCABusiness::Transfer()
+bool FCABusiness::Withdraw(double amount)
 {
+	return false;
 }
+

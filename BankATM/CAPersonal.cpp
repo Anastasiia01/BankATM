@@ -1,13 +1,20 @@
 #include "CAPersonal.h"
 
-void CAPersonal::Deposit()
+CAPersonal::CAPersonal()
 {
 }
 
-void CAPersonal::Withdraw()
+bool CAPersonal::Deposit(double checkAmount)
 {
+	return false;
 }
 
-void CAPersonal::Transfer()
+bool CAPersonal::Transfer(double amount, PersonalAccount* receiverAccount)
 {
+	return false;
+}
+
+bool CAPersonal::Withdraw(double amount)
+{
+	return false;
 }

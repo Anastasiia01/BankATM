@@ -1,13 +1,20 @@
 #include "HVCABusiness.h"
 
-void HVCABusiness::Deposit()
+HVCABusiness::HVCABusiness()
 {
 }
 
-void HVCABusiness::Withdraw()
+bool HVCABusiness::Deposit(double checkAmount)
 {
+	return false;
 }
 
-void HVCABusiness::Transfer()
+bool HVCABusiness::Withdraw(double amount, BA_Checking* receiverAccount)
 {
+	return false;
+}
+
+bool HVCABusiness::Transfer(double amount)
+{
+	return false;
 }

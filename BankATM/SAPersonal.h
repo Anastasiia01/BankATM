@@ -7,6 +7,8 @@
 #include <vector>
 #include <sstream>
 #include <set>
+#include <PersonalAccount>
+
 using namespace std;
 
 class SAPersonal: public PersonalAccount //Modifiy according to parent class name given 
@@ -14,18 +16,17 @@ class SAPersonal: public PersonalAccount //Modifiy according to parent class nam
 private:
 
 	string transactionID;
-	double interestRate;
-	double currentBalance;
 	double depositeAmount;
 	double withdrawAmount;
 	double transferAmount;
 
 
 public:
-	void Deposit();
-	void Withdraw();
-	void Interest();
-	void Transfer();
+	SAPersonal();
+	bool Deposit(double checkAmount);
+	bool Transfer(double amount, PersonalAccount* receiverAccount);
+	bool Withdraw(double amount);
+	bool ApplyInterest();
 	//void Transaction();
 };
 
