@@ -1,8 +1,10 @@
 
 #include <vector>
 #include "Transaction.h"
-
+#ifndef ACCOUNT_H_
+#define ACCOUNT_H_
 static int currentID = 1;
+
 class Account {
 private:
 	int accountID;
@@ -25,3 +27,4 @@ public:
 	double BalanceInquiry() { return balance; }
 
 };
+#endif

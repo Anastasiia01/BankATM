@@ -27,6 +27,5 @@ void PersonalMoneyMarket::ApplyInterest()
 
 void PersonalMoneyMarket::display()
 {
-	PersonalAccount::display();
-	cout << "Account type is Personal Money Market" << endl; // we can use typedef later
+	cout << "Account type is Personal Money Market Account" << endl;
 }
