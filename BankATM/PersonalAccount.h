@@ -6,7 +6,8 @@ class PersonalAccount: public Account {
 private:
 	string firstName;
 	string lastName;
-	long SSN; //9 digit 
+	int SSN; //9 digit 
+	int generateSSN();
 public:
 	PersonalAccount(string fn, string ln);
 };

@@ -35,5 +35,8 @@
     <ClCompile Include="Transaction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PersonalAccount.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
