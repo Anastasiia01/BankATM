@@ -6,11 +6,10 @@ class BusinessAccount:public Account {
 
 	protected:
 		void setEIN(int s) { EIN = s; }
-		long getEIN() { return EIN; }
 		void setCompanyName(String nam) { CompanyName = nam};
-		String getCompanyName() { return }
-
-	public:
 		
 
+	public:
+		long getEIN() { return EIN; }
+		String getCompanyName() { return CompanyName; }
 };
