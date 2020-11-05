@@ -1,20 +1,16 @@
 class BusinessAccount:public Account {
 	//test
-	public:
+	private:
+		long EIN; //Employer Identification Number
+		String CompanyName;
 
 	protected:
+		void setEIN(int s) { EIN = s; }
+		long getEIN() { return EIN; }
+		void setCompanyName(String nam) { CompanyName = nam};
+		String getCompanyName() { return }
 
-	private:
-
-
+	public:
+		
 
 };
-/*
- Long EIN //business ID
-String ComopanyName
-
-Savings
-Checking
-High Volume Checking
-Foreign Currency
-*/
