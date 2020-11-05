@@ -21,5 +21,6 @@ public:
 	virtual bool Deposit(double checkAmount) = 0 ; //deposit check
 	virtual bool Transfer(double amount, Account* receiverAccount) = 0;
 	virtual bool Withdraw(double amount) = 0;
+	virtual void ApplyInterest() = 0;
 	double BalanceInquiry() { return balance; }
 };

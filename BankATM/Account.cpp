@@ -85,4 +85,10 @@ bool Account::Withdraw(double amount)
 	}
 }
 
+void Account::ApplyInterest()
+{
+	//TODO: review the logic of this method
+	balance += balance * interest;
+}
+
 
