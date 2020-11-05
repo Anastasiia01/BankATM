@@ -1,6 +1,6 @@
 #include "PersonalAccount.h"
 
-PersonalAccount::PersonalAccount(string fn, string ln)
+PersonalAccount::PersonalAccount(string fn, string ln)//implicitly calls Account()
 {
 	firstName = fn;
 	lastName = ln;

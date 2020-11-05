@@ -7,10 +7,9 @@ class Account {
 private:
 	int accountID;
 	//string password; --maybe will add later
-	double balance;
-	double interest;
+	double balance; //by default assigned to zero
+	double interest; //by default assigned to zero
 	vector<Transaction> history;
-
 protected: //methods available only to child classes
 	void setInterest(double i) { interest = i; }
 	void setBalance(double b) { balance = b; }

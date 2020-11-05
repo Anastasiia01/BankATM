@@ -9,5 +9,5 @@ private:
 	int SSN; //9 digit 
 	int generateSSN();
 public:
-	PersonalAccount(string fn, string ln);
+	PersonalAccount(string fn, string ln); 
 };

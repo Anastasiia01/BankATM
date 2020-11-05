@@ -11,6 +11,8 @@ Account::Account()
 {
 	accountID = currentID; // starts assigning IDs from 1 and goes up using static count currentID
 	currentID++;
+	balance = 0;
+	interest = 0;
 }
 
 
@@ -21,7 +23,7 @@ bool Account::Deposit(double checkAmount)
 	//Next three lines add transaction to history
 	int transCount = history.size();
 	Transaction trans(to_string(transCount), 0);
-	history.push_back(trans);
+	history.push_back(trans); //need to get const
 
 	//do deposit
 	if (checkAmount > 0) {
