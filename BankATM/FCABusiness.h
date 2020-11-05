@@ -31,7 +31,7 @@ private:
 public:
 	FCABusiness();
 	bool Deposit(double checkAmount);
-	bool Transfer(double amount, BA_Checking* receiverAccount);
+	bool Transfer(double amount, BA_checking* receiverAccount);
 	bool Withdraw(double amount);
 	//void Transaction();
 
