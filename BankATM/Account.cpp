@@ -7,11 +7,11 @@
 
 using namespace std;
 
-Account::Account()
+Account::Account(double bal)
 {
 	accountID = currentID; // starts assigning IDs from 1 and goes up using static count currentID
 	currentID++;
-	balance = 0;
+	balance = bal;
 	interest = 0;
 }
 
@@ -26,11 +26,13 @@ bool Account::Deposit(double checkAmount)
 
 	//do deposit
 	if (checkAmount > 0) {
+		cout << "Balance before the transaction: " << balance << endl;
 		balance += checkAmount;
+		cout << "Balance after deposit: " << balance << endl;
 		return true;
 	}
 	else {
-		cout << "Invalid check amount";
+		cout << "Invalid amount" << endl;
 		return false;
 	}
 }
@@ -43,19 +45,22 @@ bool Account::Transfer(double amount, Account* receiverAccount)
 
 	//check if receiver exists and amount is positive
 	if (receiverAccount->accountID < currentID && amount>0) {
+		cout << "Balance before the transaction: " << balance << endl;
 		if (balance >= amount) { //check that balance allows to transfer such amount
 			balance -= amount;
 			receiverAccount->balance += amount;
+			cout << amount << " was successfully transfered" << endl;
+			cout << "Balance after transfer: " << balance << endl;
 			return true;
 		}
 		else {
-			cout << "Not enough money on your balance!";
+			cout << "Not enough money on your balance!" << endl;
 			return false;
 		}
 		
 	}
 	else {
-		cout << "Invalid amount or invalid account entered";
+		cout << "Invalid amount or invalid account entered" << endl;
 		return false;
 	}
 
@@ -69,17 +74,19 @@ bool Account::Withdraw(double amount)
 
 	//do withdraw
 	if (amount>0) {
+		cout << "Balance before the transaction: " << balance << endl;
 		if (balance >= amount) { //check that balance allows to transfer such amount
 			balance -= amount;
+			cout << "Balance after withdraw: " << balance << endl;
 			return true;
 		}
 		else {
-			cout << "Not enough money on your balance!";
+			cout << "Not enough money on your balance!" << endl;
 			return false;
 		}
 	}
 	else {
-		cout << "Invalid amount entered";
+		cout << "Invalid amount entered" << endl;
 		return false;
 	}
 }

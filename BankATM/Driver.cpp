@@ -27,12 +27,25 @@ int main()
 	accounts[5] = new HVCABusiness();
 	accounts[6] = new BA_checking();
 	accounts[7] = new PersonalMoneyMarket();
+	
+	accounts[7]->BalanceInquiry();
+	accounts[4]->BalanceInquiry();
+	cout << "Interest: " <<accounts[7]->getInterest() << endl;;
+	accounts[7]->Deposit(500);
+	accounts[7]->Transfer(200, accounts[4]);
+	accounts[4]->BalanceInquiry();
+	accounts[7]->Withdraw(200);
+	accounts[7]->Withdraw(200);
+	accounts[7]->Withdraw(200);
+	accounts[7]->Withdraw(200);
+
+
 
 	//display the type and id by calling a polymorphic method display
-	for (int i = 0; i < 8; i++)
+	/*for (int i = 0; i < 8; i++)
 	{
 		accounts[i]->display();
-	}
+	}*/
 
 	return 0;
 }

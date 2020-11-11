@@ -2,14 +2,13 @@
 
 PersonalAccount::PersonalAccount(string fn, string ln)//implicitly calls Account()
 {
+	personalID = lastpersonalID; // starts assigning IDs from 1 and goes up using static count currentID
+	lastpersonalID++;
 	firstName = fn;
 	lastName = ln;
 	SSN = generateSSN();
 }
 
-PersonalAccount::PersonalAccount()
-{
-}
 
 int PersonalAccount::generateSSN() {
 	//TODO: implement random generation of SSN 

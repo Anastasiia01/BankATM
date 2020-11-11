@@ -14,11 +14,12 @@
 using namespace std;
 
 
-class PersonalMoneyMarket : public PersonalAccount //Modifiy according to parent class name given 
+class PersonalMoneyMarket : public PersonalAccount 
 {
 private:
-	int numWithdrawalAllowed;
+	int numWithdrawalAllowed;//number of withdrawals per simulation
 	double minBAlanceForInterest;
+	double numWithdrawalDone;
 public:
 	//uses default values, so constructor can be called without any parameters
 	PersonalMoneyMarket(string fn ="John", string ln ="Snow");

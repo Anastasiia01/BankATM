@@ -15,7 +15,6 @@ private:
 	int generateSSN();
 
 public:
-	PersonalAccount(string fn, string ln);
-	PersonalAccount();
+	PersonalAccount(string f ="John", string l="Black");
 };
 #endif
