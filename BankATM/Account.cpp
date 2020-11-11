@@ -20,9 +20,8 @@ bool Account::Deposit(double checkAmount)
 {
 	//call this deposit from the child class to reuse the code
 
-	//Next three lines add transaction to history
-	int transCount = history.size();
-	Transaction trans(to_string(transCount), 0);
+	//Next two lines add transaction to history
+	Transaction trans(checkAmount, TransactionType::Deposit);
 	history.push_back(trans); //need to get const
 
 	//do deposit
@@ -38,9 +37,8 @@ bool Account::Deposit(double checkAmount)
 
 bool Account::Transfer(double amount, Account* receiverAccount)
 {
-	//Next three lines add transaction to history
-	int transCount = history.size();
-	Transaction trans(to_string(transCount), 1);
+	//Next two lines add transaction to history
+	Transaction trans(amount, TransactionType::Transfer);
 	history.push_back(trans);
 
 	//check if receiver exists and amount is positive
@@ -65,9 +63,8 @@ bool Account::Transfer(double amount, Account* receiverAccount)
 
 bool Account::Withdraw(double amount)
 {
-	//Next three lines add transaction to history
-	int transCount = history.size();
-	Transaction trans(to_string(transCount), 2);
+	//Next TWO lines add transaction to history
+	Transaction trans(amount, TransactionType::Withdraw);
 	history.push_back(trans);
 
 	//do withdraw

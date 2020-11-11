@@ -10,9 +10,12 @@
 #ifndef BUSINESSACCOUNT_H_
 #define BUSINESSACCOUNT_H_
 
+static int lastbusinessID = 1;
+
 class BusinessAccount:public Account {
 	//test
 	private:
+		int businessID;//used to display account ID in the folllowing format A1P1S1
 		long EIN; //Employer Identification Number
 		string CompanyName;
 

@@ -4,8 +4,11 @@
 #ifndef PERSONALACCOUNT_H_
 #define PERSONALACCOUNT_H_
 
+static int lastpersonalID = 1;
+
 class PersonalAccount: public Account {
 private:
+	int personalID;
 	string firstName;
 	string lastName;
 	int SSN; //9 digit 
