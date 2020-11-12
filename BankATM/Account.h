@@ -20,6 +20,7 @@ be stored as a separate variable.*/
 	vector<Transaction> history;
 protected: //methods available only to child classes
 	void setInterest(double i) { interest = i; }
+	double getBalance() { return balance; }
 	//void setBalance(double b) { balance = b; } ???
 public:
 	Account(double bal=1000);
@@ -30,7 +31,7 @@ public:
 	virtual bool Withdraw(double amount) = 0;
 	virtual void ApplyInterest() = 0;
 	virtual void display() = 0;
-	void BalanceInquiry() { cout << "Current balance: " << balance<<endl; }
+	virtual void BalanceInquiry() { cout << "Current balance: " << balance<<endl; }
 
 };
 #endif

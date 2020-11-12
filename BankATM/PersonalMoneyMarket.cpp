@@ -39,7 +39,10 @@ bool PersonalMoneyMarket::Withdraw(double amount)//the only one needs modificati
 
 void PersonalMoneyMarket::ApplyInterest()
 {
-	PersonalAccount::ApplyInterest();
+	if (getBalance() > minBAlanceForInterest)
+	{
+		PersonalAccount::ApplyInterest();
+	}
 }
 
 void PersonalMoneyMarket::display()

@@ -4,11 +4,18 @@
 using namespace std;
 
 
-class PersonalCD : public PersonalAccount //Modifiy according to parent class name given 
+class PersonalCD : public PersonalAccount 
 {
 private:
 	int numWithdrawalAllowed;
-	//frozen amount/deadline
+	double numWithdrawalDone;
+	double frozenamount;//will join balance upon the next deposit
+	double depositInterest;
+	double withdrawInterest;
+
+protected:
+	void activateFrozen();
+
 public:
 	//uses default values, so constructor can be called without any parameters
 
@@ -17,6 +24,7 @@ public:
 	bool Transfer(double amount, Account* receiverAccount);
 	bool Withdraw(double amount);
 	void ApplyInterest();
+	void BalanceInquiry();
 	void display();
 
 };

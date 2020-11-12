@@ -24,9 +24,10 @@ bool Account::Deposit(double checkAmount)
 	Transaction trans(checkAmount, TransactionType::Deposit);
 	history.push_back(trans); //need to get const
 
+	cout << "Balance before the deposit: " << balance << endl;
+	cout << "Amount to be deposited: " << checkAmount << endl;
 	//do deposit
 	if (checkAmount > 0) {
-		cout << "Balance before the transaction: " << balance << endl;
 		balance += checkAmount;
 		cout << "Balance after deposit: " << balance << endl;
 		return true;
@@ -43,13 +44,14 @@ bool Account::Transfer(double amount, Account* receiverAccount)
 	Transaction trans(amount, TransactionType::Transfer);
 	history.push_back(trans);
 
+	cout << "Balance before the transfer: " << balance << endl;
+	cout << "Amount to be transfered: " << amount << endl;
+
 	//check if receiver exists and amount is positive
 	if (receiverAccount->accountID < currentID && amount>0) {
-		cout << "Balance before the transaction: " << balance << endl;
 		if (balance >= amount) { //check that balance allows to transfer such amount
 			balance -= amount;
 			receiverAccount->balance += amount;
-			cout << amount << " was successfully transfered" << endl;
 			cout << "Balance after transfer: " << balance << endl;
 			return true;
 		}
@@ -57,7 +59,6 @@ bool Account::Transfer(double amount, Account* receiverAccount)
 			cout << "Not enough money on your balance!" << endl;
 			return false;
 		}
-		
 	}
 	else {
 		cout << "Invalid amount or invalid account entered" << endl;
@@ -72,9 +73,10 @@ bool Account::Withdraw(double amount)
 	Transaction trans(amount, TransactionType::Withdraw);
 	history.push_back(trans);
 
+	cout << "Balance before the withdraw: " << balance << endl;
+
 	//do withdraw
 	if (amount>0) {
-		cout << "Balance before the transaction: " << balance << endl;
 		if (balance >= amount) { //check that balance allows to transfer such amount
 			balance -= amount;
 			cout << "Balance after withdraw: " << balance << endl;
