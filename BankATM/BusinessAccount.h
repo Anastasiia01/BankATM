@@ -6,6 +6,7 @@
 #include <vector>
 #include <sstream>
 #include <set>
+#include <stdlib.h>
 #include "Account.h"
 #ifndef BUSINESSACCOUNT_H_
 #define BUSINESSACCOUNT_H_
@@ -18,7 +19,7 @@ class BusinessAccount:public Account {
 		int businessID;//will be later used to display account ID in the following format A1P1S1
 		long EIN; //Employer Identification Number
 		string CompanyName;
-		long getEIN() { return EIN; }
+		long findEIN(); //An employer identification number (EIN) is a nine-digit number assigned by the IRS
 	
 
 	public:
