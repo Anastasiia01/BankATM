@@ -7,7 +7,7 @@ BusinessAccount::BusinessAccount(string companyN) {
 
 }
 
-BusinessAccount::findEIN() {
+long BusinessAccount::findEIN() {
 	int i = 0, j = 0;
 
 	i = rand() % 9 + 1;

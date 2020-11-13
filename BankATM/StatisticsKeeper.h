@@ -18,6 +18,6 @@ public:
 	int NoTransacType();
 	double TotalDeposited();
 	int numRefill();
-}
+};
 
 #endif
