@@ -14,15 +14,13 @@ class HVCABusiness : public BA_checking //Modifiy according to parent class name
 {
 private:
 
-	string transactionID;
 	double transacationFee;
-	double depositeAmount;
-	double withdrawAmount;
-	double transferAmount;
 
 public:
 	HVCABusiness();
+	HVCABusiness(string fn, string ln);
 	bool Deposit(double checkAmount);
+	double ComputeTrasactionFee(double checkAmount);
 	bool Withdraw(double amount);
 	bool Transfer(double amount, Account * receiverAccount);
 	void ApplyInterest();

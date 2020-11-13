@@ -16,18 +16,18 @@ class SAPersonal: public PersonalAccount //Modifiy according to parent class nam
 {
 private:
 
-	string transactionID;
-	double depositeAmount;
-	double withdrawAmount;
-	double transferAmount;
+	double frozenamount;
+	double depositInterest;
 
 
 public:
 	SAPersonal();
+	SAPersonal(string fn, string ln);
 	bool Deposit(double checkAmount);
 	bool Transfer(double amount, Account * receiverAccount);
 	bool Withdraw(double amount);
 	void ApplyInterest();
+	void activateFrozen();
 	void display();
 	//void Transaction();
 };

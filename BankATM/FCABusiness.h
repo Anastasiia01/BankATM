@@ -19,25 +19,27 @@ class FCABusiness : public BA_checking //Modifiy according to parent class name 
 {
 private:
 
-	string transactionID;
-	int transWithdrawCount;
-	int tranDepositeCount;
-	std::map<std::string, int> mapOfCurrency = {
+	int numWithdrawalDone;
+	int numWithdrawalAllowed;
+	int numTransferDone;
+	int numTransferAllowed;
+	int numDepositDone;
+	int numDepositAllowed;
+	map<string, int> mapOfCurrency = {
 			{"INR",74.33},
 			{"AUD",1.40},
 			{"CAD",1.32},
 			{"EURO",0.85},
 			{"JPY",104.32},
 	};
-	double depositeAmount;
-	double withdrawAmount;
-	double transferAmount;
 public:
 	FCABusiness();
+	FCABusiness(string fn, string ln);
 	bool Deposit(double checkAmount);
 	bool Transfer(double amount, Account * receiverAccount);
 	bool Withdraw(double amount);
 	void ApplyInterest();
+	void BalanceInquiry();
 	void display();
 	//void Transaction();
 

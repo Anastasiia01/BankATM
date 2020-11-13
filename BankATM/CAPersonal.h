@@ -26,10 +26,12 @@ private:
 
 public:
 	CAPersonal();
+	CAPersonal(string fn, string ln);
 	bool Deposit(double checkAmount);
 	bool Transfer(double amount, Account* receiverAccount);
 	bool Withdraw(double amount);
 	void ApplyInterest();
+	void BalanceInquiry();
 	void display();
 	//void Transaction();
 };

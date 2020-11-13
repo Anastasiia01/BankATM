@@ -4,25 +4,39 @@ HVCABusiness::HVCABusiness()
 {
 }
 
+HVCABusiness::HVCABusiness(string fn, string ln) : BusinessAccount(fn, ln)
+{
+	transacationFee = 0.04; // 4% transaction fee
+}
+
 bool HVCABusiness::Deposit(double checkAmount)
 {
-	return false;
+	double transFeeAmount = ComputeTrasactionFee(checkAmount);
+
+	BusinessAccount::Deposit(checkAmount - transFeeAmount);
+
+}
+
+double HVCABusiness::ComputeTrasactionFee(double checkAmount) {
+	return checkAmount * transacationFee;
+
 }
 
 bool HVCABusiness::Withdraw(double amount)
 {
-	return false;
+	return BusinessAccount::Withdraw(amount);
 }
 
 bool HVCABusiness::Transfer(double amount, Account* receiverAccount)
 {
-	return false;
+	return BusinessAccount::Transfer(amount, receiverAccount);
 }
 
 void HVCABusiness::ApplyInterest()
 {
-	
+	BusinessAccount::ApplyInterest();
 }
+
 
 void HVCABusiness::display()
 {

@@ -1,26 +1,36 @@
 #include "CAPersonal.h"
 
-CAPersonal::CAPersonal()
+CAPersonal::CAPersonal(string fn, string ln) : PersonalAccount(fn, ln)
 {
+
 }
 
 bool CAPersonal::Deposit(double checkAmount)
 {
-	return false;
+	return PersonalAccount::Deposit(checkAmount);
 }
 
 bool CAPersonal::Transfer(double amount, Account* receiverAccount)
 {
-	return false;
+	return PersonalAccount::Transfer(amount, receiverAccount);
 }
 
 bool CAPersonal::Withdraw(double amount)
 {
-	return false;
+	return PersonalAccount::Withdraw(amount);
 }
 
 void CAPersonal::ApplyInterest()
 {
+	PersonalAccount::ApplyInterest();
+}
+
+void CAPersonal::BalanceInquiry()
+{
+	PersonalAccount::BalanceInquiry();
+	{
+		cout << "Available for transfer and withdrawal: " << getBalance() << endl;
+	}
 }
 
 void CAPersonal::display()
