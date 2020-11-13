@@ -166,7 +166,11 @@
     <ClCompile Include="PersonalCD.cpp" />
     <ClCompile Include="PersonalMoneyMarket.cpp" />
     <ClCompile Include="SAPersonal.cpp" />
+    <ClCompile Include="TrafficGenerator.cpp" />
     <ClCompile Include="Transaction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="traffic.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
