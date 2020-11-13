@@ -53,7 +53,7 @@ int main()
 	accounts[4]->BalanceInquiry();
 	accounts[4]->Withdraw(200);
 
-
+	
 
 	//display the type and id by calling a polymorphic method display
 	/*for (int i = 0; i < 8; i++)
