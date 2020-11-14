@@ -77,7 +77,7 @@ bool Account::Withdraw(double amount)
 
 	//do withdraw
 	if (amount>0) {
-		if (balance >= amount && amount%10==0) { //check that balance allows to transfer such amount
+		if (balance >= amount && (int)amount%10==0) { //check that balance allows to transfer such amount
 			balance -= amount;
 			cout << "Balance after withdraw: " << balance << endl;
 			return true;
