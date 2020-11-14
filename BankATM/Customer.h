@@ -20,7 +20,7 @@ private:
 	int arrivalTime, serviceTime, exitTime;
 
 public:
-	Customer();
+	Customer();//TODO: instead of set methods, at least arrival and service time, add as params to constructor
 	Account* getAccount();
 	void setarrivalTime();
 	int getarrivalTime();

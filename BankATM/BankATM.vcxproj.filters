@@ -57,6 +57,9 @@
     <ClInclude Include="TrafficGenerator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Customer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp">
@@ -99,6 +102,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TrafficGenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Customer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

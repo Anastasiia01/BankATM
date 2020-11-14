@@ -15,12 +15,15 @@ private:
 	int initCustomersNum;
 	//queue<Customer>initCustomers;
 	int dynCustomersNum;
+	tuple<int, int> serviceTimeRange;
 	int multAccountPercentile;
 	int persAccountPercentile;//business account rate = 100 - perAccountRate
 	map <int, string> pertypesToPercentile;
 	map <int, string> bustypesToPercentile;
 	map <int, string> transactionsToPercentile;
 public:
-	TrafficGenerator(string filename);
+	TrafficGenerator(string filename = "traffic.txt");
+	void displayInfo();
+
 };
 #endif

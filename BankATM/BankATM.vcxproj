@@ -152,6 +152,7 @@
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="StatisticsKeeper.h" />
     <ClInclude Include="TrafficGenerator.h" />
+    <ClInclude Include="Customer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="SAPersonal.cpp" />
     <ClCompile Include="TrafficGenerator.cpp" />
     <ClCompile Include="Transaction.cpp" />
+    <ClInclude Include="Customer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="traffic.txt" />
