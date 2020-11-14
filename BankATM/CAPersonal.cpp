@@ -1,6 +1,6 @@
 #include "CAPersonal.h"
 
-CAPersonal::CAPersonal(string fn, string ln) : PersonalAccount(fn, ln)
+CAPersonal::CAPersonal(string f, string l) : PersonalAccount(f, l)
 {
 
 }

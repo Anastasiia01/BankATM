@@ -16,14 +16,14 @@ using namespace std;
 
 class BA_checking :public BusinessAccount {
 	private:
-		string transactionID;
-		double currentBalance;
+		//string transactionID;
+		//double currentBalance;
 		double depositedAmount;
 		double withdrawAmount;
 		double transferAmount;
 
 	public:
-		BA_checking();
+		BA_checking(string company = "University of Bridgeport");
 		bool Deposit(double checkAmount); //deposit check
 		bool Transfer(double amount, Account* receiverAccount);
 		bool Withdraw(double amount);

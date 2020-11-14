@@ -1,10 +1,7 @@
 #include "HVCABusiness.h"
 
-HVCABusiness::HVCABusiness()
-{
-}
 
-HVCABusiness::HVCABusiness(string fn, string ln) : BusinessAccount(fn, ln)
+HVCABusiness::HVCABusiness(string name) : BA_checking(name)
 {
 	transacationFee = 0.04; // 4% transaction fee
 }
@@ -13,7 +10,7 @@ bool HVCABusiness::Deposit(double checkAmount)
 {
 	double transFeeAmount = ComputeTrasactionFee(checkAmount);
 
-	BusinessAccount::Deposit(checkAmount - transFeeAmount);
+	return BusinessAccount::Deposit(checkAmount - transFeeAmount);
 
 }
 

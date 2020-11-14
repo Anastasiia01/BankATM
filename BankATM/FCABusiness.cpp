@@ -1,6 +1,6 @@
 #include "FCABusiness.h"
 
-FCABusiness::FCABusiness(string fn, string ln) : BusinessAccount(fn, ln)
+FCABusiness::FCABusiness(string name) : BA_checking(name)
 {
 	numWithdrawalDone = 0;
 	numWithdrawalAllowed = 0;

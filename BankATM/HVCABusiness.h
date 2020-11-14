@@ -17,8 +17,7 @@ private:
 	double transacationFee;
 
 public:
-	HVCABusiness();
-	HVCABusiness(string fn, string ln);
+	HVCABusiness(string companyName="University of Bridgeport");
 	bool Deposit(double checkAmount);
 	double ComputeTrasactionFee(double checkAmount);
 	bool Withdraw(double amount);

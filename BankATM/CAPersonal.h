@@ -25,8 +25,7 @@ private:
 	double transferAmount;
 
 public:
-	CAPersonal();
-	CAPersonal(string fn, string ln);
+	CAPersonal(string fn="Kate", string ln="Green");
 	bool Deposit(double checkAmount);
 	bool Transfer(double amount, Account* receiverAccount);
 	bool Withdraw(double amount);

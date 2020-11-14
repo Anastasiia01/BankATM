@@ -33,8 +33,7 @@ private:
 			{"JPY",104.32},
 	};
 public:
-	FCABusiness();
-	FCABusiness(string fn, string ln);
+	FCABusiness(string companyName = "University of Bridgeport");
 	bool Deposit(double checkAmount);
 	bool Transfer(double amount, Account * receiverAccount);
 	bool Withdraw(double amount);
