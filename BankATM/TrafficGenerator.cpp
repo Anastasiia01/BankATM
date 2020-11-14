@@ -35,6 +35,5 @@ void TrafficGenerator::displayInfo()
 	cout << "Customer Base: " << customerBase << endl;
 	cout << "Initial Customer Number: " << initCustomersNum << endl;
 	cout << "Dynamic Customer Number: " << dynCustomersNum << endl;
-
 	cout << "Service time range is from " << get<0>(serviceTimeRange)<<" to "<< get<1>(serviceTimeRange)<< endl;
 }

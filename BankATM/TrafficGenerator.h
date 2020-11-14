@@ -5,6 +5,7 @@
 #include <queue> 
 #include <iostream>
 #include <string>
+#include "Customer.h"
 
 using namespace std;
 
@@ -13,7 +14,7 @@ private:
 	//customer shoudl have a service time
 	int customerBase;
 	int initCustomersNum;
-	//queue<Customer>initCustomers;
+	queue<Customer>initCustomers;
 	int dynCustomersNum;
 	tuple<int, int> serviceTimeRange;
 	int multAccountPercentile;

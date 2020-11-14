@@ -11,6 +11,7 @@
 #include"SAPersonal.h"
 #include"Transaction.h"
 #include "PersonalCD.h"
+#include "TrafficGenerator.h"
 
 
 int main()
@@ -29,7 +30,7 @@ int main()
 	accounts[7] = new PersonalMoneyMarket();
 	
 	//Testing PersonalMoneyMarket:
-	accounts[7]->BalanceInquiry();
+	/*accounts[7]->BalanceInquiry();
 	accounts[4]->BalanceInquiry();
 	cout << "Interest: " <<accounts[7]->getInterest() << endl;;
 	accounts[7]->Deposit(500);
@@ -45,13 +46,16 @@ int main()
 	cout << "Interest: " << accounts[4]->getInterest() << endl;;
 	accounts[4]->Deposit(500);
 	accounts[4]->Transfer(200, accounts[7]);
-	accounts[7]->BalanceInquiry();
+	accounts[4]->BalanceInquiry();
 	accounts[4]->Withdraw(200);
 	accounts[4]->Withdraw(200);
 	accounts[4]->Withdraw(200);
 	accounts[4]->Deposit(200);
 	accounts[4]->BalanceInquiry();
-	accounts[4]->Withdraw(200);
+	accounts[4]->Withdraw(200);*/
+
+	TrafficGenerator trafficGen;
+	trafficGen.displayInfo();
 
 	
 

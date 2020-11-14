@@ -19,7 +19,7 @@ long BusinessAccount::findEIN() {
 		j = j * 10 + rand() % 10;      //Generate the 5 digits of the lower part.
 	}
 
-	cout << "Employer identification number (EIN): " << i << j;
+	//cout << "Employer identification number (EIN): " << i << j;
 
 	long int res = i * 1000 + j;
 	return res;

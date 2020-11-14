@@ -40,12 +40,18 @@ bool PersonalCD::Transfer(double amount, Account* receiverAccount)
 
 bool PersonalCD::Withdraw(double amount)
 {
+	if ((int)amount % 10 != 0) {
+		cout << " Amount for withdrawal must be a multiple of 10." << endl;
+		return false;
+	}
+
 	//Withdrawals may be allowed on the interest but only a limited number.
 	bool success = false;
 	double fee = amount * withdrawInterest;
 	cout << "Amount to be withdrawn: " << amount << endl;
 	cout << "Fee for the withdraw transaction is: " << fee << endl;
 	amount = amount + fee;//apply interest
+
 	if (amount > getBalance() - frozenamount)
 	{
 		cout << "Not enough available balance for the withdraw" << endl;
