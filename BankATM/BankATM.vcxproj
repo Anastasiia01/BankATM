@@ -151,8 +151,8 @@
     <ClInclude Include="SAPersonal.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="StatisticsKeeper.h" />
-    <ClInclude Include="TrafficGenerator.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="TrafficGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
