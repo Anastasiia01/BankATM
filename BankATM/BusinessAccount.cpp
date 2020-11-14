@@ -7,7 +7,7 @@ BusinessAccount::BusinessAccount(string companyN) {
 
 }
 
-long BusinessAccount::findEIN() {
+int BusinessAccount::findEIN() {
 	int i = 0, j = 0;
 
 	i = rand() % 9 + 1;
@@ -19,9 +19,8 @@ long BusinessAccount::findEIN() {
 		j = j * 10 + rand() % 10;      //Generate the 5 digits of the lower part.
 	}
 
-	//cout << "Employer identification number (EIN): " << i << j;
+	int res = i * 1000 + j;
 
-	long int res = i * 1000 + j;
 	return res;
 
 }

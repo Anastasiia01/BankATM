@@ -17,9 +17,9 @@ class BusinessAccount:public Account {
 	
 	private:
 		int businessID;//will be later used to display account ID in the following format A1P1S1
-		long EIN; //Employer Identification Number
+		int EIN; //Employer Identification Number
 		string CompanyName;
-		long findEIN(); //An employer identification number (EIN) is a nine-digit number assigned by the IRS
+		int findEIN(); //An employer identification number (EIN) is a nine-digit number assigned by the IRS
 	
 
 	public:
