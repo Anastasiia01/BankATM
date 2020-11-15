@@ -36,7 +36,7 @@ bool BA_checking::Transfer(double amount, Account * receiverAccount)
 
 void BA_checking::ApplyInterest()
 {
-
+	BusinessAccount::ApplyInterest();
 }
 
 void BA_checking::BalanceInquiry()
@@ -52,5 +52,4 @@ void BA_checking::display()
 	cout << "Account type is Business Checking " << endl;
 }
 
-// from here other part
 
