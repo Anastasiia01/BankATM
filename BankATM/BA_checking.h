@@ -21,6 +21,7 @@ class BA_checking :public BusinessAccount {
 		bool Deposit(double checkAmount); //deposit check
 		bool Transfer(double amount, Account* receiverAccount);
 		bool Withdraw(double amount);
+		void BalanceInquiry();
 		void ApplyInterest();
 		void display();
 };

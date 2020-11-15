@@ -40,9 +40,9 @@ int main()
 	accounts[7]->Withdraw(200);
 	accounts[7]->Withdraw(200);
 	accounts[7]->Withdraw(200);
-
+	*/
 	//Testing PersonalCD:
-	accounts[4]->BalanceInquiry();
+	/*accounts[4]->BalanceInquiry();
 	cout << "Interest: " << accounts[4]->getInterest() << endl;;
 	accounts[4]->Deposit(500);
 	accounts[4]->Transfer(200, accounts[7]);
@@ -54,10 +54,14 @@ int main()
 	accounts[4]->BalanceInquiry();
 	accounts[4]->Withdraw(200);*/
 
+	//Testing Business Checking:
+	accounts[6]->BalanceInquiry();
+
+	/*
 	TrafficGenerator trafficGen;
 	trafficGen.displayInfo();
 
-	
+	*/
 
 	//display the type and id by calling a polymorphic method display
 	/*for (int i = 0; i < 8; i++)
