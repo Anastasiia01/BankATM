@@ -5,12 +5,11 @@ BA_checking::BA_checking(string name): BusinessAccount(name) {
 
 }
 
-
-
 bool BA_checking::Deposit(double checkAmount)
 {
-
-	return false;
+	bool success = BusinessAccount::Deposit(checkAmount);
+	cout << endl;
+	return success;
 }
 
 bool BA_checking::Withdraw(double amount)
@@ -19,10 +18,12 @@ bool BA_checking::Withdraw(double amount)
 }
 
 
-
 bool BA_checking::Transfer(double amount, Account * receiverAccount)
 {
-	return false;
+	bool success = true;
+	BusinessAccount::Transfer(amount, receiverAccount);
+	cout << endl;
+	return success;
 }
 
 void BA_checking::ApplyInterest()

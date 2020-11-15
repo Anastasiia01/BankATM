@@ -56,6 +56,13 @@ int main()
 
 	//Testing Business Checking:
 	accounts[6]->BalanceInquiry();
+	cout << "Interest: " << accounts[6]->getInterest() << endl;
+	accounts[6]->Deposit(500);
+	cout << "Account 4 balance before Transfer: ";
+	accounts[4]->BalanceInquiry();
+	accounts[6]->Transfer(200, accounts[4]);
+	cout << "Account 4 balance: ";
+	accounts[4]->BalanceInquiry();
 
 	/*
 	TrafficGenerator trafficGen;
