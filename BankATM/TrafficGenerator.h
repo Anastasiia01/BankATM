@@ -22,6 +22,7 @@ private:
 	map <int, string> pertypesToPercentile;
 	map <int, string> bustypesToPercentile;
 	map <int, string> transactionsToPercentile;
+	void parseFile(string file);
 public:
 	TrafficGenerator(string filename = "traffic.txt");
 	void displayInfo();
