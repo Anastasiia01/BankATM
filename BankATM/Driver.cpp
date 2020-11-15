@@ -63,7 +63,11 @@ int main()
 	accounts[6]->Transfer(200, accounts[4]);
 	cout << "Account 4 balance: ";
 	accounts[4]->BalanceInquiry();
-
+	cout << "Account 6";
+	accounts[6]->BalanceInquiry();
+	accounts[6]->Withdraw(200);
+	accounts[6]->BalanceInquiry();
+	
 	/*
 	TrafficGenerator trafficGen;
 	trafficGen.displayInfo();

@@ -14,7 +14,15 @@ bool BA_checking::Deposit(double checkAmount)
 
 bool BA_checking::Withdraw(double amount)
 {
-	return false;
+	if ((int)amount % 10 != 0) {
+		cout << " Amount for withdrawal must be a multiple of 10." << endl;
+		return false;
+	}
+	BusinessAccount::Withdraw(amount);
+	bool success = false;
+	cout << "Amount to be withdrawn: " << amount << endl;
+	cout << endl;
+	return success;
 }
 
 
