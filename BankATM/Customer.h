@@ -16,17 +16,20 @@ using namespace std;
 class Customer
 {
 private:
-	vector <Account*> accountVec;
+	map <string,Account*> accountMap; //Accout Type name is used for mapping to child account object
 	int arrivalTime, serviceTime, exitTime;
 
 public:
-	Customer();//TODO: instead of set methods, at least arrival and service time, add as params to constructor
-	Account* getAccount();
-	void setarrivalTime();
+	Customer();
+	Customer(int aTime, int sTime, int eTime);
+	//TODO: instead of set methods, at least arrival and service time, add as params to constructor
+	void addAccount(string, Account*);
+	Account* getAccount(string accountType);
+	//void setarrivalTime(int aTime);
 	int getarrivalTime();
-	void setserviceTime();
+	//void setserviceTime(int sTime);
 	int getserviceTime();
-	void setexitTime();
+	//void setexitTime(int eTime);
 	int getexitTime();
 
 

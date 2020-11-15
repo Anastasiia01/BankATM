@@ -1,37 +1,78 @@
 #include "Customer.h"
 
-
 Customer::Customer()
 {
-	arrivalTime=0, serviceTime=0, exitTime=0;
+	arrivalTime = 0, serviceTime = 0, exitTime = 0;
 }
 
-Account* Customer::getAccount()
+Customer::Customer(int aTime, int sTime, int eTime)
 {
-	return nullptr;
+	arrivalTime= aTime, serviceTime=sTime, exitTime=eTime;
 }
 
-
-void Customer::setarrivalTime()
+void Customer::addAccount(string accountType , Account* accountObj)
 {
+	// Please follow this nomanclature for input string accountType
+	// For Personal Savings - "PSA"
+	// For Personal Checking - "PCA"
+	// For Personal Money Market - "PMM"
+	// For Personal Certifiation of Deposit - "PCD"
+	// For Business Savings - "BSA"
+	// For Business Checking - "BCA"
+	// For Business High Volume Checking - "BHVC"
+	// For Business Foreign Currency - "BFC"
+
+	accountMap.insert({ accountType,accountObj });
 }
+
+Account* Customer::getAccount(string accountType)
+{
+	// Please follow this nomanclature for input string accountType
+	// For Personal Savings - "PSA"
+	// For Personal Checking - "PCA"
+	// For Personal Money Market - "PMM"
+	// For Personal Certifiation of Deposit - "PCD"
+	// For Business Savings - "BSA"
+	// For Business Checking - "BCA"
+	// For Business High Volume Checking - "BHVC"
+	// For Business Foreign Currency - "BFC"
+
+	Account* accountReturn;
+
+	//Convert accountType to Upper case
+	transform(accountType.begin(), accountType.end(), accountType.begin(), ::toupper);
+
+	accountReturn = accountMap[accountType];
+	if (accountReturn != nullptr)
+		return accountReturn;
+	else
+		return nullptr;
+}
+
+/*
+void Customer::setarrivalTime(int aTime)
+{
+}*/
 
 int Customer::getarrivalTime()
 {
+	return arrivalTime;
 }
-
-void Customer::setserviceTime()
+/*
+void Customer::setserviceTime(int sTime)
 {
-}
+}*/
 
 int Customer::getserviceTime()
 {
+	return serviceTime;
 }
-
-void Customer::setexitTime()
+/*
+void Customer::setexitTime(int eTime)
 {
-}
+}*/
 
 int Customer::getexitTime()
 {
+	return exitTime;
 }
