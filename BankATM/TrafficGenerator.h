@@ -26,6 +26,7 @@ private:
 public:
 	TrafficGenerator(string filename = "traffic.txt");
 	void displayInfo();
+	queue<Customer>& getInitTraffic();
 
 };
 #endif

@@ -1,7 +1,9 @@
 #include "TrafficGenerator.h"
+#include "Customer.h"
 #include <iostream>
 #include <string>
 #include <tuple>
+#include <queue>
 #include <fstream>
 #include <iterator>
 
@@ -76,4 +78,40 @@ void TrafficGenerator::displayInfo()
 	{
 		cout << (*iter).first << ": " << (*iter).second << endl;
 	}
+}
+
+queue<Customer>& TrafficGenerator::getInitTraffic()
+{
+	int serviceTime, multAccountcheck, numOfAccounts;
+	int range = get<1>(serviceTimeRange) - get<0>(serviceTimeRange)+1;
+	cout << "Range of serv time: "<<range<<endl;
+	//Customer c(0, 0);
+	//cout << c.getserviceTime();
+	for (int i = 0; i < initCustomersNum; i++)
+	{
+		//generates one Customer at a time
+		serviceTime = rand() % range + get<0>(serviceTimeRange);
+		cout << "Serv time: " << serviceTime << endl;
+		Customer cust(0, serviceTime);
+		multAccountcheck = rand() % 101;
+		cout << "multAccountcheck: " << multAccountcheck << endl;
+		if (multAccountcheck > multAccountPercentile)// one account
+		{
+			numOfAccounts = 1; 
+		}
+		else {//multiple accounts
+			numOfAccounts = rand() % 3+2;//2-4 accounts
+		}
+		/*for (int j = 0; j < numOfAccounts; j++)
+		{
+			//generates one Account at a time
+		}*/
+		//
+		
+		//initCustomers.push();
+	}
+
+	cout << "Init Customer num: " << initCustomers.size() << endl;
+	
+	return initCustomers;
 }
