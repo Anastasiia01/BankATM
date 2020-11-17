@@ -143,6 +143,7 @@
     <ClInclude Include="BA_savings.h" />
     <ClInclude Include="BusinessAccount.h" />
     <ClInclude Include="CAPersonal.h" />
+    <ClInclude Include="Customer.h" />
     <ClInclude Include="FCABusiness.h" />
     <ClInclude Include="HVCABusiness.h" />
     <ClInclude Include="PersonalAccount.h" />
@@ -151,7 +152,6 @@
     <ClInclude Include="SAPersonal.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="StatisticsKeeper.h" />
-    <ClInclude Include="Customer.h" />
     <ClInclude Include="TrafficGenerator.h" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +160,7 @@
     <ClCompile Include="BA_savings.cpp" />
     <ClCompile Include="BusinessAccount.cpp" />
     <ClCompile Include="CAPersonal.cpp" />
+    <ClCompile Include="Customer.cpp" />
     <ClCompile Include="Driver.cpp" />
     <ClCompile Include="FCABusiness.cpp" />
     <ClCompile Include="HVCABusiness.cpp" />
@@ -169,7 +170,6 @@
     <ClCompile Include="SAPersonal.cpp" />
     <ClCompile Include="TrafficGenerator.cpp" />
     <ClCompile Include="Transaction.cpp" />
-    <ClInclude Include="Customer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="traffic.txt" />

@@ -55,10 +55,25 @@ int main()
 	accounts[4]->BalanceInquiry();
 	accounts[4]->Withdraw(200);*/
 
+	//Testing Business Checking:
+	/*accounts[6]->BalanceInquiry();
+	cout << "Interest: " << accounts[6]->getInterest() << endl;
+	accounts[6]->Deposit(500);
+	cout << "Account 4 balance before Transfer: ";
+	accounts[4]->BalanceInquiry();
+	accounts[6]->Transfer(200, accounts[4]);
+	cout << "Account 4 balance: ";
+	accounts[4]->BalanceInquiry();
+	cout << "Account 6";
+	accounts[6]->BalanceInquiry();
+	accounts[6]->Withdraw(200);
+	accounts[6]->BalanceInquiry();*/
+	
 	TrafficGenerator trafficGen;
 	trafficGen.displayInfo();
+	trafficGen.getInitTraffic();
 
-	cout << "*********************************************" << endl;
+	/*cout << "*********************************************" << endl;
 	cout << "             Personal Saving Testing         " << endl;
 	cout << "*********************************************" << endl;
 	// Personal Saving Testing
@@ -70,13 +85,13 @@ int main()
 	accounts[0]->Transfer(200, accounts[1]);
 	accounts[0]->BalanceInquiry();
 	accounts[0]->Withdraw(200);
-	accounts[0]->BalanceInquiry();
+	accounts[0]->BalanceInquiry();*/
 
 	
 	// Business Saving Testig
 
 	// Foreign Currency Testing
-	cout << "*********************************************" << endl;
+	/*cout << "*********************************************" << endl;
 	cout << "             Foreign Currency Testing        " << endl;
 	cout << "*********************************************" << endl;
 	accounts[1]->BalanceInquiry();
@@ -88,7 +103,7 @@ int main()
 	accounts[1]->Withdraw(200);
 	accounts[1]->Deposit(200);
 	accounts[1]->BalanceInquiry();
-	accounts[1]->Withdraw(200);
+	accounts[1]->Withdraw(200);*/
 
 	// High Volume Checking Accouting Testing
 

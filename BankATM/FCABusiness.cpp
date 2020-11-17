@@ -109,7 +109,7 @@ void FCABusiness::ApplyInterest()
 
 void FCABusiness::BalanceInquiry()
 {
-	BusinessAccount::BalanceInquiry();
+	//BusinessAccount::BalanceInquiry();
 	cout << "Available Balance Foreign Checking Account: " << getBalance() << endl;
 }
 

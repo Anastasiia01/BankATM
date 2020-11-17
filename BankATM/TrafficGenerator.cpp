@@ -85,14 +85,14 @@ queue<Customer>& TrafficGenerator::getInitTraffic()
 	int serviceTime, multAccountcheck, numOfAccounts;
 	int range = get<1>(serviceTimeRange) - get<0>(serviceTimeRange)+1;
 	cout << "Range of serv time: "<<range<<endl;
-	//Customer c(0, 0);
+	//Customer* cust1;
 	//cout << c.getserviceTime();
 	for (int i = 0; i < initCustomersNum; i++)
 	{
 		//generates one Customer at a time
 		serviceTime = rand() % range + get<0>(serviceTimeRange);
 		cout << "Serv time: " << serviceTime << endl;
-		Customer cust(0, serviceTime);
+		Customer cust(0, serviceTime, 0);
 		multAccountcheck = rand() % 101;
 		cout << "multAccountcheck: " << multAccountcheck << endl;
 		if (multAccountcheck > multAccountPercentile)// one account
@@ -102,13 +102,17 @@ queue<Customer>& TrafficGenerator::getInitTraffic()
 		else {//multiple accounts
 			numOfAccounts = rand() % 3+2;//2-4 accounts
 		}
-		/*for (int j = 0; j < numOfAccounts; j++)
+		for (int j = 0; j < numOfAccounts; j++)
 		{
 			//generates one Account at a time
-		}*/
-		//
+
+
+
+
+		}
 		
-		//initCustomers.push();
+		
+		initCustomers.push(cust);
 	}
 
 	cout << "Init Customer num: " << initCustomers.size() << endl;
