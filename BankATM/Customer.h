@@ -1,22 +1,16 @@
 #pragma once
-#include <iostream>
-#include <fstream>
 #include <map>
-#include <iterator>
 #include <algorithm>
-#include <vector>
-#include <sstream>
-#include <set>
-#include <list>
 #include "Account.h"
-#include "SAPersonal.h"
+
+#ifndef CUSTOMER_h
+#define CUSTOMER_h
 
 using namespace std;
 
-class Customer
-{
+class Customer {
 private:
-	map <string,Account*> accountMap; //Accout Type name is used for mapping to child account object
+	map <string, Account*> accountMap; //Accout Type name is used for mapping to child account object
 	int arrivalTime, serviceTime, exitTime;
 
 public:
@@ -31,6 +25,5 @@ public:
 	int getserviceTime();
 	//void setexitTime(int eTime);
 	int getexitTime();
-
-
 };
+#endif
