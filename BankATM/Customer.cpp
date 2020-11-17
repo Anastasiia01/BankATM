@@ -2,16 +2,24 @@
 
 Customer::Customer()
 {
-	arrivalTime = 0, serviceTime = 0, exitTime = 0;
+	arrivalTime = 0;
+	serviceTime = 0;
+	exitTime = 0;
+	//accountMap = { {"PSA",nullptr},{"PCA",nullptr},{"PMM",nullptr},
+	//{"PCD",nullptr}, {"BSA",nullptr}, {"BCA",nullptr}, 
+	//{"BHVC",nullptr}, {"BFC",nullptr} };
 }
 
 Customer::Customer(int aTime, int sTime, int eTime)
 {
-	arrivalTime= aTime, serviceTime=sTime, exitTime=eTime;
+	arrivalTime = aTime;
+	serviceTime = sTime;
+	exitTime = eTime;
 }
 
-void Customer::addAccount(string accountType , Account* accountObj)
+void Customer::addAccount(string accountType, Account* accountObj)
 {
+
 	// Please follow this nomanclature for input string accountType
 	// For Personal Savings - "PSA"
 	// For Personal Checking - "PCA"
