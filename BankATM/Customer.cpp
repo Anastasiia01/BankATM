@@ -10,11 +10,10 @@ Customer::Customer()
 	//{"BHVC",nullptr}, {"BFC",nullptr} };
 }
 
-Customer::Customer(int aTime, int sTime, int eTime)
+Customer::Customer(int aTime, int sTime)
 {
 	arrivalTime = aTime;
 	serviceTime = sTime;
-	exitTime = eTime;
 }
 
 void Customer::addAccount(string accountType, Account* accountObj)
@@ -70,10 +69,11 @@ int Customer::getserviceTime()
 {
 	return serviceTime;
 }
-/*
+
 void Customer::setexitTime(int eTime)
 {
-}*/
+	exitTime = eTime;
+}
 
 int Customer::getexitTime()
 {

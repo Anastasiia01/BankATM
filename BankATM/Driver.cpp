@@ -19,7 +19,7 @@ int main()
 {
 	//Create base class pointer array
 	Account* accounts[8];
-	Customer* cust1 = new Customer();
+	Customer* cust1 = new Customer(4,5);
 	//Hard code or randomly create the child objects
 	accounts[0] = new SAPersonal();
 	accounts[1] = new FCABusiness();
@@ -109,14 +109,14 @@ int main()
 
 
 	// Customer Testing
-	/*cout << "*********************************************" << endl;
+	cout << "*********************************************" << endl;
 	cout << "              Customer Class Testing         " << endl;
 	cout << "*********************************************" << endl;
 
 	cust1->addAccount("PMM", accounts[7]);
 	cust1->addAccount("PCD", accounts[4]);
 	cust1->addAccount("BCA", accounts[6]);
-	//cust1->addAccount("BFC", accounts[1]);
+	cust1->addAccount("BFC", accounts[1]);
 	cust1->addAccount("BHVC", accounts[5]);
 
 
@@ -124,7 +124,7 @@ int main()
 	cout << "New Balance Inquiry" << endl;
 	newAcc->BalanceInquiry();
 
-	cout << "******************  Done  *******************" << endl;*/
+	cout << "******************  Done  *******************" << endl;
 
 	//	display the type and id by calling a polymorphic method display
 	/*for (int i = 0; i < 8; i++)

@@ -104,7 +104,7 @@ queue<Customer>& TrafficGenerator::getInitTraffic()
 	for (int j = 0; j < initCustomersNum; j++) {
 		//generates one Customer at a time
 		serviceTime = rand() % range + get<0>(serviceTimeRange);
-		Customer cust(0, serviceTime, 0);
+		Customer cust(0, serviceTime);
 		multAccountcheck = rand() % 101;
 		if (multAccountcheck > multAccountPercentile)// one account
 			numOfAccounts = 1;

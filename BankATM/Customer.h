@@ -15,7 +15,7 @@ private:
 
 public:
 	Customer();
-	Customer(int aTime, int sTime, int eTime);
+	Customer(int aTime, int sTime);
 	void displayAccounts();
 	void addAccount(string, Account*);
 	Account* getAccount(string accountType);
@@ -23,7 +23,7 @@ public:
 	int getarrivalTime();
 	//void setserviceTime(int sTime);
 	int getserviceTime();
-	//void setexitTime(int eTime);
+	void setexitTime(int eTime);
 	int getexitTime();
 };
 #endif
