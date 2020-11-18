@@ -2,14 +2,14 @@
 #include "Account.h"
 #include "BA_checking.h"
 #include "BA_savings.h"
-#include "BusinessAccount.h"
+//#include "BusinessAccount.h"
 #include "CAPersonal.h"
 #include "FCABusiness.h"
 #include "HVCABusiness.h"
-#include "PersonalAccount.h"
+//#include "PersonalAccount.h"
 #include "PersonalMoneyMarket.h"
 #include "SAPersonal.h"
-#include "Transaction.h"
+//#include "Transaction.h"
 #include "PersonalCD.h"
 #include "TrafficGenerator.h"
 #include "Customer.h"
@@ -70,7 +70,7 @@ int main()
 	accounts[6]->BalanceInquiry();*/
 	
 	TrafficGenerator trafficGen;
-	trafficGen.displayInfo();
+	//trafficGen.displayInfo();
 	trafficGen.getInitTraffic();
 
 	/*cout << "*********************************************" << endl;
@@ -120,7 +120,15 @@ int main()
 	cust1->addAccount("BFC", accounts[1]);
 	cust1->addAccount("BHVC", accounts[5]);
 
+	cust1->displayAccounts();
+
 	Account* newAcc = cust1->getAccount("BFC");
+	cout << "New Balance Inquiry" << endl;
+	newAcc->BalanceInquiry();
+
+	Customer cust;
+	cust.addAccount("PSA", accounts[0]);
+	newAcc = cust1->getAccount("PSA");
 	cout << "New Balance Inquiry" << endl;
 	newAcc->BalanceInquiry();
 

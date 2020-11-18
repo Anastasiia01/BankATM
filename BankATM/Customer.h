@@ -16,7 +16,7 @@ private:
 public:
 	Customer();
 	Customer(int aTime, int sTime, int eTime);
-	//TODO: instead of set methods, at least arrival and service time, add as params to constructor
+	void displayAccounts();
 	void addAccount(string, Account*);
 	Account* getAccount(string accountType);
 	//void setarrivalTime(int aTime);
