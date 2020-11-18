@@ -19,9 +19,6 @@ Customer::Customer(int aTime, int sTime, int eTime)
 
 void Customer::addAccount(string accountType, Account* accountObj)
 {
-	cout << "Adding account....." << endl;
-	cout << "Account Type: " << typeid(*accountObj).name() << endl;
-	cout << "Account pointer: " << accountObj << endl;
 	// Please follow this nomanclature for input string accountType
 	// For Personal Savings - "PSA"
 	// For Personal Checking - "PCA"
@@ -33,11 +30,11 @@ void Customer::addAccount(string accountType, Account* accountObj)
 	// For Business Foreign Currency - "BFC"
 
 	accountMap.insert({ accountType, accountObj });
+
 }
 
 Account* Customer::getAccount(string accountType)
 {
-	cout << "Getting account....." << endl;
 	// Please follow this nomanclature for input string accountType
 	// For Personal Savings - "PSA"
 	// For Personal Checking - "PCA"
@@ -48,23 +45,11 @@ Account* Customer::getAccount(string accountType)
 	// For Business High Volume Checking - "BHVC"
 	// For Business Foreign Currency - "BFC"
 
-	Account* accountReturn;
-
-	//Convert accountType to Upper case
-	//transform(accountType.begin(), accountType.end(), accountType.begin(), ::toupper);
-	//cout << "Customer accountType" << accountType<<endl;
-	accountReturn = accountMap[accountType];
-	//cout << "Account Type: " << typeid(*accountReturn).name() << endl;
-	if (accountReturn != nullptr)
-	{
-		cout << "Not null " << endl;
-		return accountReturn;
+	Account* accountReturn = nullptr;
+	if (accountMap.find(accountType) != accountMap.end()) {
+		accountReturn = accountMap[accountType];
 	}
-	else
-	{
-		cout << "null " << endl;
-		return nullptr;
-	}
+	return accountReturn;
 }
 
 /*

@@ -109,30 +109,22 @@ int main()
 
 
 	// Customer Testing
-	cout << "*********************************************" << endl;
+	/*cout << "*********************************************" << endl;
 	cout << "              Customer Class Testing         " << endl;
 	cout << "*********************************************" << endl;
-	
-	cust1->addAccount("PSA", accounts[0]);
+
 	cust1->addAccount("PMM", accounts[7]);
 	cust1->addAccount("PCD", accounts[4]);
 	cust1->addAccount("BCA", accounts[6]);
-	cust1->addAccount("BFC", accounts[1]);
+	//cust1->addAccount("BFC", accounts[1]);
 	cust1->addAccount("BHVC", accounts[5]);
 
-	cust1->displayAccounts();
 
 	Account* newAcc = cust1->getAccount("BFC");
 	cout << "New Balance Inquiry" << endl;
 	newAcc->BalanceInquiry();
 
-	Customer cust;
-	cust.addAccount("PSA", accounts[0]);
-	newAcc = cust1->getAccount("PSA");
-	cout << "New Balance Inquiry" << endl;
-	newAcc->BalanceInquiry();
-
-	cout << "******************  Done  *******************" << endl;
+	cout << "******************  Done  *******************" << endl;*/
 
 	//	display the type and id by calling a polymorphic method display
 	/*for (int i = 0; i < 8; i++)

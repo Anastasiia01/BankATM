@@ -18,6 +18,7 @@
 #include "SAPersonal.h"
 #include "PersonalCD.h"
 
+using namespace std;
 
 TrafficGenerator::TrafficGenerator(string file)
 {
@@ -93,125 +94,99 @@ void TrafficGenerator::displayInfo()
 
 queue<Customer>& TrafficGenerator::getInitTraffic()
 {
-	/* Use statistical values that were read from the file to generate inital Customer queue*/
+    /* Use statistical values that were read from the file to generate and return 
+    queue of inital Customers*/
 	int serviceTime, multAccountcheck, numOfAccounts;
 	int PorB, accountType;
 	string accType;
-	int range = get<1>(serviceTimeRange) - get<0>(serviceTimeRange)+1;
-	cout << "Range of serv time: "<<range<<endl;
-	Account* accoutnPt = new SAPersonal();
-	//Customer* cust1;
-	//cout << c.getserviceTime();
-	for (int i = 0; i < initCustomersNum; i++)
-	{
-		cout << "Customer# " << i << endl;
-		cout << "********************************************************" << endl;
+	int range = get<1>(serviceTimeRange) - get<0>(serviceTimeRange) + 1;
+	Account* pt;
+	for (int j = 0; j < initCustomersNum; j++) {
 		//generates one Customer at a time
 		serviceTime = rand() % range + get<0>(serviceTimeRange);
-		cout << "Serv time: " << serviceTime << endl;
 		Customer cust(0, serviceTime, 0);
 		multAccountcheck = rand() % 101;
-		cout << "multAccountcheck: " << multAccountcheck << endl;
 		if (multAccountcheck > multAccountPercentile)// one account
-		{
-			numOfAccounts = 1; 
-		}
-		else {//multiple accounts
-			numOfAccounts = rand() % 3+2;//2-4 accounts
-		}
-		cout << "Number of Accounts: " << numOfAccounts << endl;
-		for (int j = 0; j < numOfAccounts; j++)
-		{
+			numOfAccounts = 1;
+		else //multiple accounts
+			numOfAccounts = rand() % 3 + 2;//2-4 accounts
+
+		for (int i = 0; i < numOfAccounts; i++) {
 			//generates one Account at a time
 			PorB = rand() % 101;
 			accountType = rand() % 101;
-			cout << "j: "<<j<<endl;
-			//cout << "PerOrBus: " << PorB << endl;
-			//cout << "accountType: " << accountType << endl;
 			if (PorB > persAccountPercentile)// business account
 			{
 				for (auto const& x : bustypesToPercentile)
 				{
-					cout << "Key: " << x.first << endl;
-					if (accountType < x.first) // string (key)
+					if (accountType < x.first) 
 					{
-						//x.second
 						accType = x.second;
-						if (accType == "Savings")
-						{
-							accoutnPt = new BA_savings();
-							accType = "BSA";//abbreviation used to add accounts into Customer class
-						}
-						else if (accType == "Checking")
-						{
-							accoutnPt = new BA_checking();
-							accType = "BCA";
-						}
-						else if (accType == "HighVolumeChecking")
-						{
-							accoutnPt = new HVCABusiness();
-							accType = "BHVC";
-						}
-						else //ForeignCurrency
-						{
-							accoutnPt = new FCABusiness();
-							accType = "BFC";
-						}
 						break;
-					}//end inner if
-				}//end for
-			}//end outer if
-			else {//personal account
-				for (auto const& x : pertypesToPercentile)
+					}
+				}
+				if (accType == "Savings")
 				{
-					//cout << "Key: " << x.first << endl;
-					if (accountType < x.first) // string (key)
-					{
-						//x.second
-						accType = x.second;
-						if (accType == "Savings")
-						{
-							accoutnPt = new SAPersonal();
-							accType = "PSA";//abbreviation used to add accounts into Customer class
-						}
-						else if (accType == "Checking")
-						{
-							accoutnPt = new CAPersonal();
-							accType = "PCA";
-						}
-						else if (accType == "MoneyMarket")
-						{
-							accoutnPt = new PersonalMoneyMarket();
-							accType = "PMM";
-						}
-						else //CertificateOfDeposits
-						{
-							accoutnPt = new PersonalCD();
-							accType = "PCD";
-						}
-						break;
-					}//end inner if
-				}//end for
-			}//end else
-			//Account* pt = cust.getAccount(accType);
-
-			cust.displayAccounts();
-			cout << "Account type I want to add: "<< accType << endl;
-			if (cust.getAccount(accType)==nullptr) 
-			{
-				cout << "Adding" << endl;
-				cust.addAccount(accType, accoutnPt);
+					pt = new BA_savings();
+					accType = "BSA";//abbreviation used to add accounts into Customer class
+				}
+				else if (accType == "Checking")
+				{
+					pt = new BA_checking();
+					accType = "BCA";
+				}
+				else if (accType == "HighVolumeChecking")
+				{
+					pt = new HVCABusiness();
+					accType = "BHVC";
+				}
+				else //ForeignCurrency
+				{
+					pt = new FCABusiness();
+					accType = "BFC";
+				}
 			}
 			else {
-				cout << "Repetative!" << endl;
-				numOfAccounts++;//skip this account as it is repeatative and create one more
+				for (auto const& x : pertypesToPercentile)
+				{
+					if (accountType < x.first)
+					{
+						accType = x.second;
+						break;
+					}
+				}
+				if (accType == "Savings")
+				{
+					pt = new SAPersonal();
+					accType = "PSA";//abbreviation used to add accounts into Customer class
+				}
+				else if (accType == "Checking")
+				{
+					pt = new CAPersonal();
+					accType = "PCA";
+				}
+				else if (accType == "MoneyMarket")
+				{
+					pt = new PersonalMoneyMarket();
+					accType = "PMM";
+				}
+				else //CertificateOfDeposits
+				{
+					pt = new PersonalCD();
+					accType = "PCD";
+				}
 			}
-		}//end for that create one account per iteration
-		
+			if (cust.getAccount(accType) == nullptr)
+			{
+				cust.addAccount(accType, pt);
+			}
+			else {
+				numOfAccounts++;//not add this account as it is repeatative and create one more
+			}
+		}
 		initCustomers.push(cust);
 	}
-
-	cout << "Init Customer num: " << initCustomers.size() << endl;
-	
+	//Customer cust = initCustomers.front();
+	//initCustomers.pop();	
 	return initCustomers;
 }
