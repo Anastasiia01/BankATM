@@ -8,6 +8,7 @@ void Bank::set_inputfile(string file)
 
 void Bank::report()
 {
+	statsKeeper.report();
 }
 
 void Bank::generate_customerbase()

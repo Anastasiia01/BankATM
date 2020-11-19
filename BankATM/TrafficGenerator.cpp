@@ -193,6 +193,7 @@ queue<Customer>& TrafficGenerator::getInitTraffic() {
     //initCustomers.pop();	
 }
 
+
 void TrafficGenerator::initCustomerBase()
 {
     /* Use statistical values that were read from the file to generate and return 
@@ -201,10 +202,23 @@ void TrafficGenerator::initCustomerBase()
 		//generates one Customer at a time
 		Customer cust = generateCust();
 		allCustomers.push_back(cust);
+		countTime += cust.getserviceTime();
 	}
-
+    AvSerTime = countTime / initCustomersNum;
 	//Quick test:
 	cout << "Generated customer base: "<<allCustomers.size() << endl;
 	//Customer cust = allCustomers[78];
 	//cust.displayAccounts();
+}
+
+double TrafficGenerator::getAvSerTime() {
+	return AvSerTime;
+}
+
+int TrafficGenerator::getNoATMs() {
+	return 1;
+}
+
+int TrafficGenerator::getDuration() {
+	return countTime;
 }
