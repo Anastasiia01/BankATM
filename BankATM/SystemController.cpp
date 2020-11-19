@@ -4,6 +4,7 @@
 
 void SystemController::startSim(int simTime, int dynCust, vector<Customer>& base)
 {
+	//TODO: add shuffle for customer base
 	int count = 0;
 	servedCust = 0;
 	queue<Customer> users;

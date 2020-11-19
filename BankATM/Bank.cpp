@@ -4,6 +4,7 @@ void Bank::set_inputfile(string file)
 {
 	inputFile = file;
 	trafficGen = TrafficGenerator(inputFile);
+	//trafficGen.displayInfo();
 }
 
 void Bank::report()
