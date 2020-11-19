@@ -16,6 +16,7 @@ private:
 	//customer shoudl have a service time
 	int customerBase;
 	int initCustomersNum;
+	int countTime;
 	queue<Customer>initCustomers;//vector of 200 Customers
 	int dynCustomersNum;
 	tuple<int, int> serviceTimeRange;
@@ -32,6 +33,8 @@ public:
 	queue<Customer>& getInitTraffic();
 	void initCustomerBase();
 	double getAvSerTime();
+	int getDuration();
+	int getNoATMs();
 
 };
 #endif

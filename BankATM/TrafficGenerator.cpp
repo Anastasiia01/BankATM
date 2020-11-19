@@ -104,7 +104,7 @@ void TrafficGenerator::initCustomerBase()
 {
     /* Use statistical values that were read from the file to generate and return 
     queue of inital Customers*/
-	int serviceTime, multAccountcheck, numOfAccounts, countTime=0;
+	int serviceTime, multAccountcheck, numOfAccounts;
 	int PorB, accountType;
 	string accType;
 	int range = get<1>(serviceTimeRange) - get<0>(serviceTimeRange) + 1;
@@ -203,4 +203,12 @@ void TrafficGenerator::initCustomerBase()
 
 double TrafficGenerator::getAvSerTime() {
 	return AvSerTime;
+}
+
+int TrafficGenerator::getNoATMs() {
+	return 1;
+}
+
+int TrafficGenerator::getDuration() {
+	return countTime;
 }
