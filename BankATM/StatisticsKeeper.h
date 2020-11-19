@@ -20,7 +20,7 @@ public:
 	int NoTransacType();
 	double TotalDeposited();
 	int numRefill();
-	void report();
+	void report(TrafficGenerator obj, int dur, int atmNum);
 };
 
 #endif

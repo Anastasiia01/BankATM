@@ -35,8 +35,6 @@ public:
 	queue<Customer>& getInitTraffic();
 	void initCustomerBase();
 	double getAvSerTime();
-	int getDuration();
-	int getNoATMs();
 
 };
 #endif

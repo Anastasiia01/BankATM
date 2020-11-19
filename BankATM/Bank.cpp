@@ -8,7 +8,7 @@ void Bank::set_inputfile(string file)
 
 void Bank::report()
 {
-	statsKeeper.report();
+	statsKeeper.report(trafficGen, simTime, atmNum);
 }
 
 void Bank::generate_customerbase()

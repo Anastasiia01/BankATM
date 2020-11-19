@@ -23,6 +23,8 @@ using namespace std;
 TrafficGenerator::TrafficGenerator(string file)
 {
 	parseFile(file);
+	countTime = 0;
+	AvSerTime = 0;
 	/*transactionsToPercentile =
 	{
 			{40, "Deposit"},
@@ -204,7 +206,9 @@ void TrafficGenerator::initCustomerBase()
 		allCustomers.push_back(cust);
 		countTime += cust.getserviceTime();
 	}
-    AvSerTime = countTime / initCustomersNum;
+
+    AvSerTime = (double)countTime / customerBase;
+
 	//Quick test:
 	cout << "Generated customer base: "<<allCustomers.size() << endl;
 	//Customer cust = allCustomers[78];
@@ -215,10 +219,3 @@ double TrafficGenerator::getAvSerTime() {
 	return AvSerTime;
 }
 
-int TrafficGenerator::getNoATMs() {
-	return 1;
-}
-
-int TrafficGenerator::getDuration() {
-	return countTime;
-}
