@@ -15,12 +15,13 @@ private:
 	string inputFile;
 
 public:
-	void set_inputfile(string file) { inputFile = file; }
+	//Bank();
+	void set_inputfile(string file);
 	void set_atm_num(int atm) { atmNum = atm; }
 	void set_sim_time(int time) { simTime = time; }
 	void report();//calls statsKeeper.report()
 	void generate_customerbase(); // trafficGen.initCustomersBase();
-	void generate_initial_traffic();// trafficGen.initTraffic();
+	//void generate_initial_traffic();// trafficGen.initTraffic(); TODO: add later
 	void simulate();//call systemControl.startSimulation();
 };
 #endif

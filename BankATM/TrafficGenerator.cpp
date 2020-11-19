@@ -23,12 +23,12 @@ using namespace std;
 TrafficGenerator::TrafficGenerator(string file)
 {
 	parseFile(file);
-	transactionsToPercentile =
+	/*transactionsToPercentile =
 	{
 			{40, "Deposit"},
 			{80, "Withdraw"},
 			{100, "Tranfer"}
-	};
+	};*/
 
 }
 
@@ -71,6 +71,99 @@ void TrafficGenerator::parseFile(string file)
 	input.close();
 }
 
+Customer TrafficGenerator::generateCust()
+{
+	int serviceTime, multAccountcheck, numOfAccounts;
+	int PorB, accountType;
+	string accType;
+	int range = get<1>(serviceTimeRange) - get<0>(serviceTimeRange) + 1;
+	Account* pt;
+	serviceTime = rand() % range + get<0>(serviceTimeRange);
+	Customer cust(0, serviceTime);
+	
+	multAccountcheck = rand() % 101;
+	if (multAccountcheck > multAccountPercentile)// one account
+		numOfAccounts = 1;
+	else //multiple accounts
+		numOfAccounts = rand() % 3 + 2;//2-4 accounts
+
+	for (int i = 0; i < numOfAccounts; i++) 
+	{
+		//generates one Account at a time
+		PorB = rand() % 101;
+		accountType = rand() % 101;
+		if (PorB > persAccountPercentile)// business account
+		{
+			for (auto const& x : bustypesToPercentile)
+			{
+				if (accountType < x.first)
+				{
+					accType = x.second;
+					break;
+				}
+			}
+			if (accType == "Savings")
+			{
+				pt = new BA_savings();
+				accType = "BSA";//abbreviation used to add accounts into Customer class
+			}
+			else if (accType == "Checking")
+			{
+				pt = new BA_checking();
+				accType = "BCA";
+			}
+			else if (accType == "HighVolumeChecking")
+			{
+				pt = new HVCABusiness();
+				accType = "BHVC";
+			}
+			else //ForeignCurrency
+			{
+				pt = new FCABusiness();
+				accType = "BFC";
+			}
+		}
+		else {
+			for (auto const& x : pertypesToPercentile)
+			{
+				if (accountType < x.first)
+				{
+					accType = x.second;
+					break;
+				}
+			}
+			if (accType == "Savings")
+			{
+				pt = new SAPersonal();
+				accType = "PSA";//abbreviation used to add accounts into Customer class
+			}
+			else if (accType == "Checking")
+			{
+				pt = new CAPersonal();
+				accType = "PCA";
+			}
+			else if (accType == "MoneyMarket")
+			{
+				pt = new PersonalMoneyMarket();
+				accType = "PMM";
+			}
+			else //CertificateOfDeposits
+			{
+				pt = new PersonalCD();
+				accType = "PCD";
+			}
+		}
+		if (cust.getAccount(accType) == nullptr)
+		{
+			cust.addAccount(accType, pt);
+		}
+		else {
+			numOfAccounts++;//not add this account as it is repeatative and create one more
+		}
+	}
+	return cust;
+}
+
 void TrafficGenerator::displayInfo()
 {
 	cout << "Customer Base: " << customerBase << endl;
@@ -94,7 +187,8 @@ void TrafficGenerator::displayInfo()
 
 queue<Customer>& TrafficGenerator::getInitTraffic() {
 	//returns queue of 5 Customers
-	return initCustomers;
+	queue<Customer> custs;
+	return custs;
 	//Customer cust = initCustomers.front();
     //initCustomers.pop();	
 }
@@ -103,96 +197,14 @@ void TrafficGenerator::initCustomerBase()
 {
     /* Use statistical values that were read from the file to generate and return 
     queue of inital Customers*/
-	int serviceTime, multAccountcheck, numOfAccounts;
-	int PorB, accountType;
-	string accType;
-	int range = get<1>(serviceTimeRange) - get<0>(serviceTimeRange) + 1;
-	Account* pt;
-	for (int j = 0; j < initCustomersNum; j++) {
+	for (int j = 0; j < customerBase; j++) {
 		//generates one Customer at a time
-		serviceTime = rand() % range + get<0>(serviceTimeRange);
-		Customer cust(0, serviceTime);
-		multAccountcheck = rand() % 101;
-		if (multAccountcheck > multAccountPercentile)// one account
-			numOfAccounts = 1;
-		else //multiple accounts
-			numOfAccounts = rand() % 3 + 2;//2-4 accounts
-
-		for (int i = 0; i < numOfAccounts; i++) {
-			//generates one Account at a time
-			PorB = rand() % 101;
-			accountType = rand() % 101;
-			if (PorB > persAccountPercentile)// business account
-			{
-				for (auto const& x : bustypesToPercentile)
-				{
-					if (accountType < x.first) 
-					{
-						accType = x.second;
-						break;
-					}
-				}
-				if (accType == "Savings")
-				{
-					pt = new BA_savings();
-					accType = "BSA";//abbreviation used to add accounts into Customer class
-				}
-				else if (accType == "Checking")
-				{
-					pt = new BA_checking();
-					accType = "BCA";
-				}
-				else if (accType == "HighVolumeChecking")
-				{
-					pt = new HVCABusiness();
-					accType = "BHVC";
-				}
-				else //ForeignCurrency
-				{
-					pt = new FCABusiness();
-					accType = "BFC";
-				}
-			}
-			else {
-				for (auto const& x : pertypesToPercentile)
-				{
-					if (accountType < x.first)
-					{
-						accType = x.second;
-						break;
-					}
-				}
-				if (accType == "Savings")
-				{
-					pt = new SAPersonal();
-					accType = "PSA";//abbreviation used to add accounts into Customer class
-				}
-				else if (accType == "Checking")
-				{
-					pt = new CAPersonal();
-					accType = "PCA";
-				}
-				else if (accType == "MoneyMarket")
-				{
-					pt = new PersonalMoneyMarket();
-					accType = "PMM";
-				}
-				else //CertificateOfDeposits
-				{
-					pt = new PersonalCD();
-					accType = "PCD";
-				}
-			}
-			if (cust.getAccount(accType) == nullptr)
-			{
-				cust.addAccount(accType, pt);
-			}
-			else {
-				numOfAccounts++;//not add this account as it is repeatative and create one more
-			}
-		}
-		initCustomers.push(cust);
+		Customer cust = generateCust();
+		allCustomers.push_back(cust);
 	}
-	//Customer cust = initCustomers.front();
-	//initCustomers.pop();	
+
+	//Quick test:
+	cout << "Generated customer base: "<<allCustomers.size() << endl;
+	//Customer cust = allCustomers[78];
+	//cust.displayAccounts();
 }
