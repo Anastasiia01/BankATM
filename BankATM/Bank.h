@@ -10,6 +10,7 @@ private:
 	TrafficGenerator trafficGen;
 	StatisticsKeeper statsKeeper;
 	SystemController systemControl;
+	vector<Customer>allCustomers;//vector of 200 Customers
 	int atmNum;
 	int simTime;
 	string inputFile;

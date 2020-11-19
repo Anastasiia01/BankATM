@@ -191,31 +191,23 @@ queue<Customer>& TrafficGenerator::getInitTraffic() {
 	//returns queue of 5 Customers
 	queue<Customer> custs;
 	return custs;
-	//Customer cust = initCustomers.front();
-    //initCustomers.pop();	
 }
 
 
-void TrafficGenerator::initCustomerBase()
+vector<Customer> TrafficGenerator::initCustomerBase()
 {
     /* Use statistical values that were read from the file to generate and return 
     queue of inital Customers*/
+
+	vector<Customer>allCustomers;
 	for (int j = 0; j < customerBase; j++) {
 		//generates one Customer at a time
 		Customer cust = generateCust();
 		allCustomers.push_back(cust);
-		countTime += cust.getserviceTime();
 	}
+	//cout << "Generated customer base: " << allCustomers.size() << endl;
+	return allCustomers;
 
-    AvSerTime = (double)countTime / customerBase;
-
-	//Quick test:
-	cout << "Generated customer base: "<<allCustomers.size() << endl;
-	//Customer cust = allCustomers[78];
-	//cust.displayAccounts();
 }
 
-double TrafficGenerator::getAvSerTime() {
-	return AvSerTime;
-}
 

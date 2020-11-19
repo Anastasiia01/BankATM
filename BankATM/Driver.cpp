@@ -19,7 +19,8 @@
 int main()
 {
 	Bank mybank;
-	int ATMs, time;
+	int ATMs;
+	int time;
 	string fname;
 	cout << "Please specify input file name:\n";
 	cin >> fname;
@@ -32,7 +33,7 @@ int main()
 	mybank.set_sim_time(time);
 	mybank.generate_customerbase(); // Traffic Generator
 	//mybank.generate_initial_traffic(); // Traffic Generator
-	//mybank.simulate(); // System Controller
+	mybank.simulate(); // System Controller
 	mybank.report(); // Statistic Keeper
 
 

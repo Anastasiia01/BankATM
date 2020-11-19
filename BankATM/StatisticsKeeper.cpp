@@ -17,12 +17,13 @@ StatisticsKeeper::StatisticsKeeper() {
 
 
 
-void StatisticsKeeper::report(TrafficGenerator objT, int duration, int noATMS) 
+void StatisticsKeeper::report(SystemController obj, int duration, int noATMS) 
 {
 	cout << "************************REPORT*************************" << endl;
 	cout << "Duration of simulation is " << duration<<endl;
 	cout << "Number of ATMs is " << noATMS<<endl;
-	cout << "The average service time is "<<objT.getAvSerTime()<<endl;
+	cout<< "Total number of customers served "<< obj.getServed() << endl;
+	cout << "The average service time is "<<obj.getAvSerTime()<<endl;
 
 }
 

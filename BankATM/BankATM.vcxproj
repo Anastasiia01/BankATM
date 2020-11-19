@@ -172,6 +172,7 @@
     <ClCompile Include="PersonalMoneyMarket.cpp" />
     <ClCompile Include="SAPersonal.cpp" />
     <ClCompile Include="StatisticsKeeper.cpp" />
+    <ClCompile Include="SystemController.cpp" />
     <ClCompile Include="TrafficGenerator.cpp" />
     <ClCompile Include="Transaction.cpp" />
   </ItemGroup>

@@ -18,7 +18,6 @@ private:
 	int customerBase;
 	int initCustomersNum;
 	int countTime;
-	vector<Customer>allCustomers;//vector of 200 Customers
 	int dynCustomersNum;
 	tuple<int, int> serviceTimeRange;
 	int multAccountPercentile;
@@ -33,8 +32,7 @@ public:
 	TrafficGenerator(string filename = "traffic.txt");
 	void displayInfo();
 	queue<Customer>& getInitTraffic();
-	void initCustomerBase();
-	double getAvSerTime();
-
+	vector<Customer> initCustomerBase();
+	int getDynCust() { return dynCustomersNum; }
 };
 #endif
