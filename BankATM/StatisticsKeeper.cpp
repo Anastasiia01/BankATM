@@ -7,4 +7,11 @@
 7. Total number of transactions
 8. Total number of transactions categorized by type of transaction
 9. Total amount of money deposited / withdrawn
-10. Number of refill_cash events generated*/#include "StatisticsKeeper.h"StatisticsKeeper::StatisticsKeeper() {	}
+10. Number of refill_cash events generated*/
+
+#include "StatisticsKeeper.h"
+
+StatisticsKeeper::StatisticsKeeper() {
+
+}
+
