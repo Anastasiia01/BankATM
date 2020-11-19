@@ -12,6 +12,7 @@ private:
 	int durationOfSimulation, NoATMS, NoCostumers;
 public:
 	StatisticsKeeper();
+	double getDuration();
 	double AverageSerTime();
 	double AverageWaTime();
 	int NoCostumersType();
@@ -19,6 +20,7 @@ public:
 	int NoTransacType();
 	double TotalDeposited();
 	int numRefill();
+	void report();
 };
 
 #endif

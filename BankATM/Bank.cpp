@@ -2,4 +2,5 @@
 
 void Bank::report()
 {
+	statsKeeper.report();
 }

@@ -21,6 +21,7 @@ private:
 	tuple<int, int> serviceTimeRange;
 	int multAccountPercentile;
 	int persAccountPercentile;//business account rate = 100 - perAccountRate
+	double AvSerTime;
 	map <int, string> pertypesToPercentile;
 	map <int, string> bustypesToPercentile;
 	map <int, string> transactionsToPercentile;
@@ -30,6 +31,7 @@ public:
 	void displayInfo();
 	queue<Customer>& getInitTraffic();
 	void initCustomerBase();
+	double getAvSerTime();
 
 };
 #endif

@@ -99,11 +99,12 @@ queue<Customer>& TrafficGenerator::getInitTraffic() {
     //initCustomers.pop();	
 }
 
+
 void TrafficGenerator::initCustomerBase()
 {
     /* Use statistical values that were read from the file to generate and return 
     queue of inital Customers*/
-	int serviceTime, multAccountcheck, numOfAccounts;
+	int serviceTime, multAccountcheck, numOfAccounts, countTime=0;
 	int PorB, accountType;
 	string accType;
 	int range = get<1>(serviceTimeRange) - get<0>(serviceTimeRange) + 1;
@@ -192,7 +193,14 @@ void TrafficGenerator::initCustomerBase()
 			}
 		}
 		initCustomers.push(cust);
+		countTime += serviceTime;
 	}
+
+	AvSerTime = countTime / initCustomersNum;
 	//Customer cust = initCustomers.front();
 	//initCustomers.pop();	
+}
+
+double TrafficGenerator::getAvSerTime() {
+	return AvSerTime;
 }
