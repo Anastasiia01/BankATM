@@ -174,7 +174,6 @@
     <ClCompile Include="StatisticsKeeper.cpp" />
     <ClCompile Include="TrafficGenerator.cpp" />
     <ClCompile Include="Transaction.cpp" />
-    <ClCompile Include="StatisticsKeeper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="traffic.txt" />

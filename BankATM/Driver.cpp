@@ -33,7 +33,7 @@ int main()
 	mybank.generate_customerbase(); // Traffic Generator
 	//mybank.generate_initial_traffic(); // Traffic Generator
 	//mybank.simulate(); // System Controller
-	//mybank.report(); // Statistic Keeper*/
+	mybank.report(); // Statistic Keeper
 
 
 
