@@ -13,12 +13,31 @@
 #include "PersonalCD.h"
 #include "TrafficGenerator.h"
 #include "Customer.h"
+#include "Bank.h"
 
 
 int main()
 {
+	Bank mybank;
+	int ATMs, time;
+	string fname;
+	cout << "Please specify input file name:\n";
+	cin >> fname;
+	mybank.set_inputfile(fname);
+	cout << "Number of ATMs:\n";
+	cin >> ATMs; // input 1 for this part
+	mybank.set_atm_num(ATMs);
+	cout << "Simulation time:\n";
+	cin >> time;
+	mybank.set_sim_time(time);
+	mybank.generate_customerbase(); // Traffic Generator
+	mybank.generate_initial_traffic(); // Traffic Generator
+	mybank.simulate(); // System Controller
+	mybank.report(); // Statistic Keeper
+
+
 	//Create base class pointer array
-	Account* accounts[8];
+	/*Account* accounts[8];
 	Customer* cust1 = new Customer(4,5);
 	//Hard code or randomly create the child objects
 	accounts[0] = new SAPersonal();
@@ -28,7 +47,7 @@ int main()
 	accounts[4] = new PersonalCD(); 
 	accounts[5] = new HVCABusiness();
 	accounts[6] = new BA_checking();
-	accounts[7] = new PersonalMoneyMarket();
+	accounts[7] = new PersonalMoneyMarket();*/
 	
 	//Testing PersonalMoneyMarket:
 	/*accounts[7]->BalanceInquiry();
@@ -69,9 +88,6 @@ int main()
 	accounts[6]->Withdraw(200);
 	accounts[6]->BalanceInquiry();*/
 	
-	TrafficGenerator trafficGen;
-	//trafficGen.displayInfo();
-	trafficGen.getInitTraffic();
 
 	/*cout << "*********************************************" << endl;
 	cout << "             Personal Saving Testing         " << endl;
@@ -109,7 +125,7 @@ int main()
 
 
 	// Customer Testing
-	cout << "*********************************************" << endl;
+	/*cout << "*********************************************" << endl;
 	cout << "              Customer Class Testing         " << endl;
 	cout << "*********************************************" << endl;
 
@@ -127,7 +143,7 @@ int main()
 	cout << "******************  Done  *******************" << endl;
 
 	//	display the type and id by calling a polymorphic method display
-	/*for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 8; i++)
 	{
 		accounts[i]->display();
 	}*/

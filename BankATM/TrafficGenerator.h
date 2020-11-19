@@ -16,7 +16,7 @@ private:
 	//customer shoudl have a service time
 	int customerBase;
 	int initCustomersNum;
-	queue<Customer>initCustomers;
+	queue<Customer>initCustomers;//vector of 200 Customers
 	int dynCustomersNum;
 	tuple<int, int> serviceTimeRange;
 	int multAccountPercentile;
@@ -29,6 +29,7 @@ public:
 	TrafficGenerator(string filename = "traffic.txt");
 	void displayInfo();
 	queue<Customer>& getInitTraffic();
+	void initCustomerBase();
 
 };
 #endif

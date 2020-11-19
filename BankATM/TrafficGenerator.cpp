@@ -92,7 +92,14 @@ void TrafficGenerator::displayInfo()
 	}
 }
 
-queue<Customer>& TrafficGenerator::getInitTraffic()
+queue<Customer>& TrafficGenerator::getInitTraffic() {
+	//returns queue of 5 Customers
+	return initCustomers;
+	//Customer cust = initCustomers.front();
+    //initCustomers.pop();	
+}
+
+void TrafficGenerator::initCustomerBase()
 {
     /* Use statistical values that were read from the file to generate and return 
     queue of inital Customers*/
@@ -188,5 +195,4 @@ queue<Customer>& TrafficGenerator::getInitTraffic()
 	}
 	//Customer cust = initCustomers.front();
 	//initCustomers.pop();	
-	return initCustomers;
 }

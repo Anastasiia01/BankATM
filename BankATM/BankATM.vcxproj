@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="Bank.h" />
     <ClInclude Include="BA_checking.h" />
     <ClInclude Include="BA_savings.h" />
     <ClInclude Include="BusinessAccount.h" />
@@ -150,12 +151,14 @@
     <ClInclude Include="PersonalCD.h" />
     <ClInclude Include="PersonalMoneyMarket.h" />
     <ClInclude Include="SAPersonal.h" />
+    <ClInclude Include="SystemController.h" />
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="StatisticsKeeper.h" />
     <ClInclude Include="TrafficGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
+    <ClCompile Include="Bank.cpp" />
     <ClCompile Include="BA_checking.cpp" />
     <ClCompile Include="BA_savings.cpp" />
     <ClCompile Include="BusinessAccount.cpp" />
