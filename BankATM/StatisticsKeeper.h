@@ -3,6 +3,7 @@
 #include <map>
 #include <iterator>
 #include <algorithm>
+#include "TrafficGenerator.h"
 #ifndef STATISTICS_H
 #define STATISTICS_H
 
