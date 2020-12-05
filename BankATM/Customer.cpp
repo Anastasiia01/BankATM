@@ -53,19 +53,22 @@ Account* Customer::getAccount(string accountType)
 	return accountReturn;
 }
 
-/*
+
 void Customer::setarrivalTime(int aTime)
 {
-}*/
+	arrivalTime = aTime;
+
+}
 
 int Customer::getarrivalTime()
 {
 	return arrivalTime;
 }
-/*
+
 void Customer::setserviceTime(int sTime)
 {
-}*/
+	serviceTime = sTime;
+}
 
 int Customer::getserviceTime()
 {

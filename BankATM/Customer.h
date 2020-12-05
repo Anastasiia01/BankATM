@@ -19,10 +19,10 @@ public:
 	void displayAccounts();
 	void addAccount(string, Account*);
 	Account* getAccount(string accountType);
-	//void setarrivalTime(int aTime);
+	void setarrivalTime(int aTime);
 	int getarrivalTime();
 	void decrementTimeLeft() { timeLeft--; }
-	//void setserviceTime(int sTime);
+	void setserviceTime(int sTime);
 	int getserviceTime();
 	int getTimeLeft() { return timeLeft; }
 	void setexitTime(int eTime);
