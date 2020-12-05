@@ -15,8 +15,6 @@ StatisticsKeeper::StatisticsKeeper() {
 
 }
 
-
-
 void StatisticsKeeper::report(SystemController obj, int duration, int noATMS) 
 {
 	cout << "************************REPORT*************************" << endl;

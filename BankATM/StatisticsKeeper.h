@@ -12,14 +12,6 @@ private:
 	int durationOfSimulation, NoATMS, NoCostumers;
 public:
 	StatisticsKeeper();
-	double getDuration();
-	double AverageSerTime();
-	double AverageWaTime();
-	int NoCostumersType();
-	int NoTransac();
-	int NoTransacType();
-	double TotalDeposited();
-	int numRefill();
 	void report(SystemController obj, int dur, int atmNum);
 };
 
