@@ -1,6 +1,6 @@
 #include "Partition.h"
 
-Bank* Partition::getAtmPtr()
+Bank& Partition::getAtmPtr()
 {
     return atmp;
 }
@@ -10,7 +10,7 @@ void Partition::setAtmPtr(Bank* atmptr)
     atmp = atmptr;
 }
 
-Partition* Partition::getNextPtr()
+Partition& Partition::getNextPtr()
 {
     return nextp;
 }
