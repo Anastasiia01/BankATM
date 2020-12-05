@@ -1,7 +1,7 @@
 #include "Partition.h"
 
 using namespace std;
-
+//Timingwheel is an algorithm of O(1) complexity
 class Timingwheel
 {
 private:
