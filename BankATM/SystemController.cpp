@@ -17,7 +17,7 @@ void SystemController::startSim(int simTime, int dynCust, vector<Customer>& base
 			users.push(cust);
 		}
 		//serves current user
-		cout << "Serv Time left: " << users.front().getTimeLeft()<<endl;
+		//cout << "Serv Time left: " << users.front().getTimeLeft()<<endl;
 		users.front().decrementTimeLeft();
 		if (users.front().getTimeLeft() == 0) {
 			countTime += users.front().getserviceTime();//total service time
