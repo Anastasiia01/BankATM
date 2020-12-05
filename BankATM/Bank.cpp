@@ -22,3 +22,12 @@ void Bank::simulate()
 {
 	systemControl.startSim(simTime, trafficGen.getDynCust(), allCustomers);
 }
+
+void Bank::get_user_input() {
+
+}
+
+void Bank::print_final_statistics() {
+
+
+}
