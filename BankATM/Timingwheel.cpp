@@ -12,5 +12,7 @@ Timingwheel::Timingwheel()
 Timingwheel::insert(int customer_service_time, ATM* p1) {
 	//if ATM is empty, [check for customers waiting in other ATMs and insert], move to the next time slot and check for customers
 	//if there is a customer waiting for the specific ATM, insert the customer 
+	//The partition should be inserted in (current_slot + customer_service_time)
+	current_slot = (current_slot + 1) % slot.length; //this makes it circular
 
 }
