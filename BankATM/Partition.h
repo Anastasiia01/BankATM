@@ -3,7 +3,7 @@ class Partition
 {
 	private:
 		Bank* atmp;
-		Partition* nextp;
+		Partition* nextp; //maybe here it should be a vector of vectors
 	
 	public:
 	// all needed accessor functions
