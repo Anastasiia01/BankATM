@@ -1,4 +1,8 @@
 #include "Bank.h"
+#include "Customer.h"
+#ifndef PARTITION_h
+#define PARTITION_h
+
 class Partition 
 {
 	private:
@@ -9,10 +13,13 @@ class Partition
 	public:
 		
 	// all needed accessor functions
-
+		Customer& getCustomerPtr();
+		void setCustomerPtr(Customer* customerptr);
 		Bank& getAtmPtr();
 		void setAtmPtr(Bank* atmptr);
 		Partition& getNextPtr();
 		void setNextPtr(Partition* nextptr);
 
 };
+
+#endif
