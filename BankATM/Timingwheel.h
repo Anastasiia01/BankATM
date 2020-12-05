@@ -9,7 +9,8 @@ private:
 	//max_delay (max customer transaction time possible)
 	int current_slot;
 public:
-	
+	void insert(int customer_service_time, ATM* p1);
+	void schedule();
 	Timingwheel();
 };
 
