@@ -1,6 +1,6 @@
 #include "Partition.h"
 
-Customer& Partition::getCustomerPtr()
+/*Customer& Partition::getCustomerPtr()
 {
     return PartCostumer;
 }
@@ -17,9 +17,15 @@ Bank& Partition::getAtmPtr()
 void Partition::setAtmPtr(Bank* atmptr)
 {
     atmp = atmptr;
+}*/
+
+Partition::Partition(ATM* _atm)
+{
+    atm = _atm;
+    nextp = nullptr;
 }
 
-Partition& Partition::getNextPtr()
+Partition*& Partition::getNextPtr()
 {
     return nextp;
 }
@@ -28,3 +34,9 @@ void Partition::setNextPtr(Partition* nextptr)
 {
     nextp = nextptr;
 }
+
+ATM*& Partition::getATM()
+{
+    return atm;
+}
+
