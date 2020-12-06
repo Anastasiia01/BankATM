@@ -66,6 +66,15 @@
     <ClInclude Include="SystemController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Partition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timingwheel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ATM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp">
@@ -120,6 +129,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SystemController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Partition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Timingwheel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

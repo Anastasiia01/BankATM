@@ -146,6 +146,7 @@
     <ClInclude Include="CAPersonal.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="FCABusiness.h" />
+    <ClInclude Include="ATM.h" />
     <ClInclude Include="HVCABusiness.h" />
     <ClInclude Include="PersonalAccount.h" />
     <ClInclude Include="PersonalCD.h" />
@@ -155,6 +156,8 @@
     <ClInclude Include="Transaction.h" />
     <ClInclude Include="StatisticsKeeper.h" />
     <ClInclude Include="TrafficGenerator.h" />
+    <ClInclude Include="Partition.h" />
+    <ClInclude Include="Timingwheel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
@@ -175,6 +178,8 @@
     <ClCompile Include="SystemController.cpp" />
     <ClCompile Include="TrafficGenerator.cpp" />
     <ClCompile Include="Transaction.cpp" />
+    <ClCompile Include="Partition.cpp" />
+    <ClCompile Include="Timingwheel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="traffic.txt" />

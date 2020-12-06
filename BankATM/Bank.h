@@ -1,6 +1,7 @@
 #include "TrafficGenerator.h"
 #include "StatisticsKeeper.h"
 #include "SystemController.h"
+#include "ATM.h"
 
 #ifndef BANK_h
 #define BANK_h
@@ -12,13 +13,14 @@ private:
 	SystemController systemControl;
 	vector<Customer>allCustomers;//vector of 200 Customers
 	int atmNum;
+	vector<ATM> atms;
 	int simTime;
 	string inputFile;
 
 public:
 	//Bank();
 	void set_inputfile(string file);
-	void set_atm_num(int atm) { atmNum = atm; }
+	void set_atm_num(int atm);
 	void get_user_input(); //for part 4, get all the user specified values
 	void set_sim_time(int time) { simTime = time; }
 	void report();//calls statsKeeper.report()

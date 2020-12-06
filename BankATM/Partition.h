@@ -14,14 +14,18 @@ class Partition
 		Partition* nextp; 
 	
 	public:
+		//TODO: we need constructor
+		Partition(ATM* _atm = nullptr);
 		
 	// all needed accessor functions
 		//Customer& getCustomerPtr();
 		//void setCustomerPtr(Customer* customerptr);
 		//Bank& getAtmPtr();
 		//void setAtmPtr(Bank* atmptr);
-		Partition& getNextPtr();
+		Partition*& getNextPtr();
 		void setNextPtr(Partition* nextptr);
+		ATM*& getATM();
+		//we won't ever need to set ATM, so no setATM
 
 };
 

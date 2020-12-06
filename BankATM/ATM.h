@@ -10,6 +10,8 @@ private:
 	int number;
 	int cashLeft;
 	queue<Customer> custs;
+public:
+	ATM(int num, int cashLeft = 10000) { number = num; }
 
 };
 #endif // !ATM_h

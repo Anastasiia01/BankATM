@@ -7,6 +7,15 @@ void Bank::set_inputfile(string file)
 	//trafficGen.displayInfo();
 }
 
+void Bank::set_atm_num(int atm)
+{
+	atmNum = atm;
+	for (int i = 1; i <= atmNum; i++) {
+		ATM temp(i);
+		atms.push_back(temp);
+	}
+}
+
 void Bank::report()
 {
 	statsKeeper.report(systemControl, simTime, atmNum);
