@@ -11,7 +11,15 @@ private:
 	int cashLeft;
 	queue<Customer> custs;
 public:
-	ATM(int num, int cashLeft = 10000) { number = num; }
+	ATM(int num = -1, int cash = 10000) { number = num; cashLeft = cash; }
+	int getNum() { return number; }
+	int getCashLeft() { return cashLeft; }
+	void addCust(Customer cust) { custs.push(cust); }//enqueue Customer
+	void delCust() { custs.pop(); }//deque Customer
+
+	//Customer
+	//refill()
+
 
 };
 #endif // !ATM_h

@@ -22,9 +22,10 @@ class Partition
 		//void setCustomerPtr(Customer* customerptr);
 		//Bank& getAtmPtr();
 		//void setAtmPtr(Bank* atmptr);
-		Partition*& getNextPtr();
-		void setNextPtr(Partition* nextptr);
-		ATM*& getATM();
+		friend ostream& operator<<(ostream&, Partition&);
+		Partition* getNext();
+		void setNext(Partition*& nextptr);
+		ATM* getATM();
 		//we won't ever need to set ATM, so no setATM
 
 };

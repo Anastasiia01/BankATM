@@ -14,11 +14,12 @@
 #include "TrafficGenerator.h"
 #include "Customer.h"
 #include "Bank.h"
+#include "Timingwheel.h"
 
 
 int main()
 {
-	Bank mybank;
+	/*Bank mybank;
 	int ATMs;
 	int time;
 	string fname;
@@ -34,7 +35,15 @@ int main()
 	mybank.generate_customerbase(); // Traffic Generator
 	//mybank.generate_initial_traffic(); // Traffic Generator
 	mybank.simulate(); // System Controller
-	mybank.report(); // Statistic Keeper
+	mybank.report(); // Statistic Keeper*/
+	Timingwheel t(12);
+	ATM a1(1);
+	ATM* pt = &a1;
+	ATM a2(3);
+	t.insert(5, pt);
+	pt = &a2;
+	t.insert(5, pt);
+	cout << t;
 
 
 

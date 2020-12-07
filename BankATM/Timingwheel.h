@@ -7,9 +7,8 @@ using namespace std;
 class Timingwheel
 {
 private:
-	int maxDelay;
-	Partition* slots;
-	//maxDelay (max customer transaction time possible)
+	int size; //maxDelay (max customer transaction time possible)
+	Partition* slots; //vector<Partition> slots;
 	//somewhere here there should be a vector of vectors for the queue of partition in each slot
 	int current_slot;
 public:
@@ -18,6 +17,7 @@ public:
 	void insert(int customer_service_time, ATM* p1);
 	void schedule();
 	void clear_current_slot(); //clears partition pointer and sets to null
+	friend ostream& operator<<(ostream&, Timingwheel&);
 };
 
 #endif
