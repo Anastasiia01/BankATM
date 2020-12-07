@@ -52,7 +52,5 @@ ostream& operator<<(ostream& out, Partition& p)
     if (p.nextp != nullptr) {
         cout << *(p.nextp);
     }
-    cout << endl; 
-
     return out;
 }

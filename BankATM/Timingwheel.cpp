@@ -19,27 +19,24 @@ Timingwheel::Timingwheel(int _maxDelay)
 
 
 void Timingwheel::insert(int customer_service_time, ATM* p1) {
-	Partition part(p1);
-	Partition* partPtr = &part;
 	int index = (current_slot + customer_service_time) % size; //Partition is inserted in correct slot. This makes it circular
 	cout << "Index: " << index << endl;
-	Partition current = slots[index];//???
-	cout << "Inside Insert():" << endl;
-	if (current.getATM() == nullptr) {
+	Partition* current = &slots[index];
+	if (current->getATM() == nullptr) {
+		Partition part(p1);
 		slots[index] = part;
 		cout << "Empty" << endl;
 	}
 	else {
 		cout << "Second" << endl;
-		while (current.getNext() != nullptr) {
+		while (current->getNext() != nullptr) {
 			//cout << "Inside while" << endl;
-			current = *(current.getNext());
+			current = (current->getNext());
 		}
-		cout << current;
-		current.setNext(partPtr);
+		//cout << current;
+		current->setNext(new Partition(p1));
+		cout<< "Inserted: "<< *(current->getNext()) << endl;
 	}
-	/*TODO: while loop to get to the end of Partition linked list and assign last 
-    Tartition* nextp to be "part" that we just created.*/
 }
 
 void Timingwheel::schedule()
@@ -56,7 +53,7 @@ void Timingwheel::clear_current_slot() {
 ostream& operator<<(ostream& out, Timingwheel& tw)
 {
 	for (int i = 0; i < tw.size; i++) {
-		cout << i<<" "<< tw.slots[i];
+		cout << i << " " << tw.slots[i] << endl;
 	}
 	return out;
 }

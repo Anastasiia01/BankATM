@@ -36,6 +36,7 @@ int main()
 	//mybank.generate_initial_traffic(); // Traffic Generator
 	mybank.simulate(); // System Controller
 	mybank.report(); // Statistic Keeper*/
+	// Check of Timingwheel insert():
 	Timingwheel t(12);
 	ATM a1(1);
 	ATM* pt = &a1;
@@ -43,6 +44,12 @@ int main()
 	t.insert(5, pt);
 	pt = &a2;
 	t.insert(5, pt);
+	ATM a3(4);
+	pt = &a3;
+	t.insert(5, pt);
+	ATM a4(2);
+	pt = &a4;
+	t.insert(4, pt);
 	cout << t;
 
 
