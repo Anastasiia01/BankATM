@@ -24,7 +24,7 @@ class Partition
 		//void setAtmPtr(Bank* atmptr);
 		friend ostream& operator<<(ostream&, Partition&);
 		Partition* getNext();
-		void setNext(Partition*& nextptr);
+		void setNext(Partition* nextptr);
 		ATM* getATM();
 		//we won't ever need to set ATM, so no setATM
 

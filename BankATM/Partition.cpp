@@ -34,7 +34,7 @@ Partition* Partition::getNext()
     return nextp;
 }
 
-void Partition::setNext(Partition*& nextptr)
+void Partition::setNext(Partition* nextptr)
 {
     nextp = nextptr;
 }
