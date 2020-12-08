@@ -2,32 +2,26 @@
 #include "Account.h"
 #include "BA_checking.h"
 #include "BA_savings.h"
-//#include "BusinessAccount.h"
 #include "CAPersonal.h"
 #include "FCABusiness.h"
 #include "HVCABusiness.h"
-//#include "PersonalAccount.h"
 #include "PersonalMoneyMarket.h"
 #include "SAPersonal.h"
-//#include "Transaction.h"
 #include "PersonalCD.h"
-#include "TrafficGenerator.h"
-#include "Customer.h"
 #include "Bank.h"
-#include "Timingwheel.h"
 
 
 int main()
 {
-	/*Bank mybank;
-	int ATMs;
+	Bank mybank;
+	int ATMs = 3;
 	int time;
-	string fname;
-	cout << "Please specify input file name:\n";
-	cin >> fname;
+	string fname = "traffic.txt";
+	//cout << "Please specify input file name:\n";
+	//cin >> fname;
 	mybank.set_inputfile(fname);
-	cout << "Number of ATMs:\n";
-	cin >> ATMs; // input 1 for this part
+	//cout << "Number of ATMs:\n";
+	//cin >> ATMs; // input 1 for this part
 	mybank.set_atm_num(ATMs);
 	cout << "Simulation time:\n";
 	cin >> time;
@@ -35,9 +29,10 @@ int main()
 	mybank.generate_customerbase(); // Traffic Generator
 	//mybank.generate_initial_traffic(); // Traffic Generator
 	mybank.simulate(); // System Controller
-	mybank.report(); // Statistic Keeper*/
+	mybank.report(); // Statistic Keeper //print_final_statistics();
 	// Check of Timingwheel insert():
-	Timingwheel t(12);
+	/*Timingwheel t(12);
+	cout <<"T1: "<< t;
 	ATM a1(1);
 	ATM* pt = &a1;
 	ATM a2(3);
@@ -50,9 +45,7 @@ int main()
 	ATM a4(2);
 	pt = &a4;
 	t.insert(4, pt);
-	cout << t;
-
-
+	cout << "T2: " << t;*/
 
 	//Create base class pointer array
 	/*Account* accounts[8];

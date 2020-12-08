@@ -1,11 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include <map>
-#include <iterator>
-#include <algorithm>
-#include "SystemController.h"
 #ifndef STATISTICS_H
 #define STATISTICS_H
+
+#include "SystemController.h"
 
 class StatisticsKeeper {
 private:

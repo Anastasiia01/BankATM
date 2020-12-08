@@ -3,31 +3,39 @@
 
 using namespace std;
 
-/*Customer& Partition::getCustomerPtr()
-{
-    return PartCostumer;
-}
-
-void Partition::setCustomerPtr(Customer* customerptr) {
-    PartCostumer = customerptr;
-}
-
-Bank& Partition::getAtmPtr()
-{
-    return atmp;
-}
-
-void Partition::setAtmPtr(Bank* atmptr)
-{
-    atmp = atmptr;
-}*/
-
 Partition::Partition(ATM* _atm)
 {
     atm = _atm;
-    //atm = new ATM;
     nextp = nullptr;
 }
+
+Partition::~Partition()
+{
+    //TODO
+}
+
+/*Partition::Partition(const Partition& copy)
+{
+    atm = new ATM(*copy.atm);
+    if (copy.nextp == nullptr) {
+        nextp = nullptr;
+    }
+    else {
+        nextp = new Partition(*copy.nextp);
+    }
+}
+
+Partition& Partition::operator=(const Partition& p)
+{
+    atm = new ATM(*p.atm);
+    if (p.nextp == nullptr) {
+        nextp = nullptr;
+    }
+    else {
+        nextp = new Partition(*p.nextp);
+    }
+    return *this;
+}*/
 
 Partition* Partition::getNext()
 {

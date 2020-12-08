@@ -1,33 +1,23 @@
-#include "Bank.h"
-#include "Customer.h"
-#include "ATM.h"
-
 #ifndef PARTITION_h
 #define PARTITION_h
 
-class Partition 
+#include "ATM.h"
+
+class Partition //TODO: add destructor, =, copyconstructor
 {
 	private:
-		//Customer* PartCostumer; //added it here so we specify who is the customer of each partition
-		//Bank* atmp;
 		ATM* atm;
-		Partition* nextp; 
-	
+		Partition* nextp; 	
 	public:
-		//TODO: we need constructor
 		Partition(ATM* _atm = nullptr);
-		
-	// all needed accessor functions
-		//Customer& getCustomerPtr();
-		//void setCustomerPtr(Customer* customerptr);
-		//Bank& getAtmPtr();
-		//void setAtmPtr(Bank* atmptr);
+		~Partition();//put body
+		//Partition(const Partition& copy);
+		//Partition& operator=(const Partition& p);
 		friend ostream& operator<<(ostream&, Partition&);
 		Partition* getNext();
 		void setNext(Partition* nextptr);
 		ATM* getATM();
 		//we won't ever need to set ATM, so no setATM
-
 };
 
 #endif

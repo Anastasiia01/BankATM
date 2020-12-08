@@ -34,5 +34,6 @@ public:
 	queue<Customer>& getInitTraffic();
 	vector<Customer> initCustomerBase();
 	int getDynCust() { return dynCustomersNum; }
+	int maxServiceTime() { return get<1>(serviceTimeRange); }
 };
 #endif

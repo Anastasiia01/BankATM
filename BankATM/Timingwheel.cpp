@@ -1,24 +1,29 @@
 #include "Timingwheel.h"
-#include "Bank.h"
 #include <iostream>
 
 using namespace std;
 
-Timingwheel::Timingwheel(int _maxDelay)
+Timingwheel::Timingwheel(int maxDelay)
 {
 	current_slot = 0;
-	size = _maxDelay +1;
+	size = maxDelay +1;
 	slots = new Partition[size];
-
-	/*for (int i = 0; i < size; i++) {
-		Partition temp;
-		slots[i] = temp;
-		cout << i<<" "<< slots[i];
-	}*/
 }
 
 
+/*Timingwheel::Timingwheel(const Timingwheel& copy)
+{
+
+}
+
+Timingwheel& Timingwheel::operator=(const Timingwheel& p)
+{
+	// TODO: insert return statement here
+}*/
+
 void Timingwheel::insert(int customer_service_time, ATM* p1) {
+	//TODO: get rid of service time
+	Partition part1(p1);
 	int index = (current_slot + customer_service_time) % size; //Partition is inserted in correct slot. This makes it circular
 	cout << "Index: " << index << endl;
 	Partition* current = &slots[index];
@@ -30,10 +35,8 @@ void Timingwheel::insert(int customer_service_time, ATM* p1) {
 	else {
 		cout << "Second" << endl;
 		while (current->getNext() != nullptr) {
-			//cout << "Inside while" << endl;
 			current = (current->getNext());
 		}
-		//cout << current;
 		current->setNext(new Partition(p1));
 		cout<< "Inserted: "<< *(current->getNext()) << endl;
 	}
@@ -41,6 +44,10 @@ void Timingwheel::insert(int customer_service_time, ATM* p1) {
 
 void Timingwheel::schedule()
 {
+	//??? the statistics of the customer leaving
+	//pop the first Customer from all ATM of the Partitions in the current slot
+	//pick the new first and insert() into the timing wheel
+
 }
 
 void Timingwheel::clear_current_slot() {

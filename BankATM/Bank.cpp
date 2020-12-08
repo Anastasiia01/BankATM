@@ -10,10 +10,8 @@ void Bank::set_inputfile(string file)
 void Bank::set_atm_num(int atm)
 {
 	atmNum = atm;
-	for (int i = 1; i <= atmNum; i++) {
-		ATM temp(i);
-		atms.push_back(temp);
-	}
+	int maxTime = trafficGen.maxServiceTime(); //for debug
+	systemControl = SystemController(atmNum, maxTime);
 }
 
 void Bank::report()

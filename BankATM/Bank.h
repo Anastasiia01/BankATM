@@ -1,10 +1,9 @@
+#ifndef BANK_h
+#define BANK_h
 #include "TrafficGenerator.h"
 #include "StatisticsKeeper.h"
 #include "SystemController.h"
-#include "ATM.h"
 
-#ifndef BANK_h
-#define BANK_h
 
 class Bank {
 private:
@@ -13,7 +12,6 @@ private:
 	SystemController systemControl;
 	vector<Customer>allCustomers;//vector of 200 Customers
 	int atmNum;
-	vector<ATM> atms;
 	int simTime;
 	string inputFile;
 
