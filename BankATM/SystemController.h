@@ -10,10 +10,11 @@ private:
 	double AvSerTime;
 	double countTime;
 	int servedCust;
-
+	ATM* getShortestATM();
 public:
 	SystemController(int atmNum =-1, int maxDelay=-1);
 	void startSim(int simTime, int dynCust, vector<Customer>& base);
+	void startSim2(int simTime, int dynCust, vector<Customer>& base);
 	double getAvSerTime();
 	int getServed() { return servedCust; }
 

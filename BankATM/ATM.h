@@ -17,6 +17,7 @@ public:
 	void addCust(Customer cust) { custs.push(cust); }//enqueue Customer
 	void delCust() { custs.pop(); }//deque Customer
 	Customer* getFirst() { return &(custs.front()); }
+	int getCustNum() { return custs.size(); }
 	//refillCash()
 
 
