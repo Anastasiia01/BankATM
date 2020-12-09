@@ -22,9 +22,9 @@ Timingwheel& Timingwheel::operator=(const Timingwheel& p)
 }*/
 
 void Timingwheel::insert(int customer_service_time, ATM* p1) {
-	//TODO: get rid of service time
+	
 	Partition part1(p1);
-	int index = (current_slot + customer_service_time) % size; //Partition is inserted in correct slot. This makes it circular
+	int index = (current_slot + customer_service_time) % size;
 	cout << "Index: " << index << endl;
 	Partition* current = &slots[index];
 	if (current->getATM() == nullptr) {

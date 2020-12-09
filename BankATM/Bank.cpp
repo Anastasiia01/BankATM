@@ -31,7 +31,17 @@ void Bank::simulate()
 }
 
 void Bank::get_user_input() {
-
+	int ATMs = 0, time = 0;
+	string fname = "";
+	cout << "Please specify input file name:\n";
+    cin >> fname;
+	set_inputfile(fname);
+	cout << "Number of ATMs:\n";
+	cin >> ATMs; 
+	set_atm_num(ATMs);
+	cout << "Simulation time:\n";
+	cin >> time;
+	set_sim_time(time);
 }
 
 void Bank::print_final_statistics() {
