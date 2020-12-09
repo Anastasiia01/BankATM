@@ -21,11 +21,10 @@ Timingwheel& Timingwheel::operator=(const Timingwheel& p)
 	// TODO: insert return statement here
 }*/
 
-void Timingwheel::insert(ATM* p1, int simulationTime) {
+void Timingwheel::insert(ATM* p1) {
 	//TODO: get rid of service time
 	Customer* nextCust = p1->getFirst();
 	int servTime = nextCust->getserviceTime();
-	nextCust->setarrivalTime(simulationTime);
 	cout <<"Customer #" << nextCust->getID() \
 		 <<" with Service time = " << servTime \
 		 <<" started using ATM #" << p1->getNum() << endl;
@@ -36,16 +35,16 @@ void Timingwheel::insert(ATM* p1, int simulationTime) {
 	if (current->getATM() == nullptr) {
 		Partition part(p1);
 		slots[index] = part;
-		cout << "Empty" << endl;
-		cout << "Inserted: " << part << endl;
+		//cout << "Empty" << endl;
+		//cout << "Inserted: " << part << endl;
 	}
 	else {
-		cout << "Second" << endl;
+		//cout << "Second" << endl;
 		while (current->getNext() != nullptr) {
 			current = (current->getNext());
 		}
 		current->setNext(new Partition(p1));
-		cout<< "Inserted: "<< *(current->getNext()) << endl;
+		//cout<< "Inserted: "<< *(current->getNext()) << endl;
 	}
 }
 
@@ -56,7 +55,7 @@ void Timingwheel::schedule(int simulationTime)
 	Customer* servedCust;
 	Customer* nextCust;
 	ATM* curATM;
-	cout << "Current Slot: " << current_slot << endl;
+	//cout << "Current Slot: " << current_slot << endl;
 	if (current->getATM() != nullptr) 
 	{
 		while (current != nullptr) 
@@ -64,7 +63,7 @@ void Timingwheel::schedule(int simulationTime)
 			curATM = current->getATM();
 			//Removed Served customers
 			servedCust = curATM->getFirst();
-			servedCust->setserviceTime(simulationTime);
+			servedCust->setexitTime(simulationTime);
 			cout << "Customer #" << servedCust->getID() << " left ATM #" << curATM->getNum() << endl;
 			/*TODO: Gabriel use servedCust to get all needed stats here
 			store in class variables and create get methods to access them
@@ -73,11 +72,10 @@ void Timingwheel::schedule(int simulationTime)
 
 			curATM->delCust();//removing servedCust
 			//Add new customers to be served to the free ATM Partition:
-			insert(curATM, simulationTime);
+			insert(curATM);
 			current = (current->getNext());
 		}
 	}
-	//clear_current_slot();
 }
 
 void Timingwheel::clear_current_slot() {
@@ -90,8 +88,14 @@ void Timingwheel::clear_current_slot() {
 
 ostream& operator<<(ostream& out, Timingwheel& tw)
 {
-	cout << "TimingWheel: " << endl;
+	cout << endl<<"------------------TIMING WHEEL------------------- " << endl;
 	for (int i = 0; i < tw.size; i++) {
+		if (i == tw.current_slot) {
+			cout << "CURRENT SLOT -> ";
+		}
+		else {
+			cout << "                ";
+		}
 		cout << i << " " << tw.slots[i] << endl;
 	}
 	return out;

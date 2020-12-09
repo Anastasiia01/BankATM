@@ -15,7 +15,7 @@ public:
 	//~Timingwheel() { delete slots; }
 	//Timingwheel(const Timingwheel& copy);
 	//Timingwheel& operator=(const Timingwheel& p);
-	void insert(ATM* p1, int simulationTime);
+	void insert(ATM* p1);
 	void schedule(int simulationTime);
 	void clear_current_slot(); //clears partition pointer and sets to null
 	friend ostream& operator<<(ostream&, Timingwheel&);

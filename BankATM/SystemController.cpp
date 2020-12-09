@@ -51,20 +51,21 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 		atm.addCust(cust);
 		//servTime = cust.getserviceTime();
 		//cout << "Service time: " << servTime << endl;
-		timingWheel.insert(&atm, 0);
+		timingWheel.insert(&atm);
 	}
-	cout << "T=0:"<<endl<<timingWheel << endl;
+	cout << endl << "************ T = 0 ************" << endl << timingWheel << endl;
 	int newCust;
 	ATM* ptShortestATM;
-	cout << "Starting simulation..." << endl;
+	cout << endl<< "Starting simulation..." << endl;
 	for (int i = 1; i <= simTime; i++) {
-		cout << "T=" << i << endl;
+		cout <<endl << "************ T = " << i <<" ************"<<endl;
 		//Adds new customers
 		newCust = rand() % (dynCust + 1);
 		for (int j = 0; j < newCust; j++) {
 			ptShortestATM = getShortestATM();
-			cout << "Customer got into queue of ATM #"<< ptShortestATM->getNum() << endl;
 			cust = base[count++];
+			cout << "Customer #"<< cust.getID()<< " arrived and got into queue for ATM #" << ptShortestATM->getNum() << endl;
+			cust.setarrivalTime(i);
 			ptShortestATM->addCust(cust);//TODO: enqueue customer in ATM with shortest queue (if arrived)
 		}
 		//serves current user: address cur_slot in timingWheel
