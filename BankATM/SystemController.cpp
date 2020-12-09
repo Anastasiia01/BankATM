@@ -52,13 +52,13 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 		//servTime = cust.getserviceTime();
 		//cout << "Service time: " << servTime << endl;
 		timingWheel.insert(&atm, 0);
-		cout << timingWheel << endl;
 	}
-
+	cout << "T=0:"<<endl<<timingWheel << endl;
 	int newCust;
 	ATM* ptShortestATM;
 	cout << "Starting simulation..." << endl;
 	for (int i = 1; i <= simTime; i++) {
+		cout << "T=" << i << endl;
 		//Adds new customers
 		newCust = rand() % (dynCust + 1);
 		for (int j = 0; j < newCust; j++) {
@@ -69,6 +69,7 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 		}
 		//serves current user: address cur_slot in timingWheel
 		timingWheel.schedule(i);
+		cout << timingWheel;
 		//print_status(); //print the status of the system to the screen and output file at each simulated instance.
 		//TW.clear_curr_slot(); //part 3 routine
 	}

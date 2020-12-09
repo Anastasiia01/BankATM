@@ -27,7 +27,7 @@ void Timingwheel::insert(ATM* p1, int simulationTime) {
 	int servTime = nextCust->getserviceTime();
 	nextCust->setarrivalTime(simulationTime);
 	cout <<"Customer #" << nextCust->getID() \
-		 <<"with Service time = " << servTime \
+		 <<" with Service time = " << servTime \
 		 <<" started using ATM #" << p1->getNum() << endl;
 	Partition part1(p1);
 	int index = (current_slot + servTime) % size; //Partition is inserted in correct slot. This makes it circular
@@ -37,6 +37,7 @@ void Timingwheel::insert(ATM* p1, int simulationTime) {
 		Partition part(p1);
 		slots[index] = part;
 		cout << "Empty" << endl;
+		cout << "Inserted: " << part << endl;
 	}
 	else {
 		cout << "Second" << endl;
@@ -50,31 +51,32 @@ void Timingwheel::insert(ATM* p1, int simulationTime) {
 
 void Timingwheel::schedule(int simulationTime)
 {
-	//??? the statistics of the customer leaving
-	//pop the first Customer from all ATM 
-	//of the Partitions in the current slot
+	current_slot = (current_slot + 1) % size;
 	Partition* current = &slots[current_slot];
 	Customer* servedCust;
 	Customer* nextCust;
 	ATM* curATM;
-	while (current->getATM() != nullptr) {
-		cout << simulationTime;
-		current_slot = (current_slot + 1) % size;
-		curATM = current->getATM();
-		//Removed Served customers
-		servedCust = curATM->getFirst();
-		servedCust->setserviceTime(simulationTime);
-		cout << "Customer #" << servedCust->getID() << " left ATM #" << curATM->getNum()<<endl;
-		/*TODO: Gabriel use servedCust to get all needed stats here
-		store in class variables and create get methods to access them
-		from StatisticsKeeper()
-		servedCust has proper arrived and end time that u can use*/
-		
-		curATM->delCust();//removing servedCust
-		//Add new customers to be served to the free ATM Partition:
-		insert(curATM, simulationTime);
-		current = (current->getNext());
-	}	
+	cout << "Current Slot: " << current_slot << endl;
+	if (current->getATM() != nullptr) 
+	{
+		while (current != nullptr) 
+		{
+			curATM = current->getATM();
+			//Removed Served customers
+			servedCust = curATM->getFirst();
+			servedCust->setserviceTime(simulationTime);
+			cout << "Customer #" << servedCust->getID() << " left ATM #" << curATM->getNum() << endl;
+			/*TODO: Gabriel use servedCust to get all needed stats here
+			store in class variables and create get methods to access them
+			from StatisticsKeeper()
+			servedCust has proper arrived and end time that u can use*/
+
+			curATM->delCust();//removing servedCust
+			//Add new customers to be served to the free ATM Partition:
+			insert(curATM, simulationTime);
+			current = (current->getNext());
+		}
+	}
 	//clear_current_slot();
 }
 
@@ -88,6 +90,7 @@ void Timingwheel::clear_current_slot() {
 
 ostream& operator<<(ostream& out, Timingwheel& tw)
 {
+	cout << "TimingWheel: " << endl;
 	for (int i = 0; i < tw.size; i++) {
 		cout << i << " " << tw.slots[i] << endl;
 	}
