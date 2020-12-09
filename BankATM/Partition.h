@@ -10,7 +10,7 @@ class Partition //TODO: add destructor, =, copyconstructor
 		Partition* nextp; 	
 	public:
 		Partition(ATM* _atm = nullptr);
-		~Partition();//put body
+		//~Partition();
 		//Partition(const Partition& copy);
 		//Partition& operator=(const Partition& p);
 		friend ostream& operator<<(ostream&, Partition&);

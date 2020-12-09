@@ -66,10 +66,11 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 			cust = base[count++];
 			cout << "Customer #"<< cust.getID()<< " arrived and got into queue for ATM #" << ptShortestATM->getNum() << endl;
 			cust.setarrivalTime(i);
-			ptShortestATM->addCust(cust);//TODO: enqueue customer in ATM with shortest queue (if arrived)
+			ptShortestATM->addCust(cust);
 		}
-		//serves current user: address cur_slot in timingWheel
+		//cout << "Before: " << timingWheel;
 		timingWheel.schedule(i);
+		timingWheel.clear_current_slot();
 		cout << timingWheel;
 		//print_status(); //print the status of the system to the screen and output file at each simulated instance.
 		//TW.clear_curr_slot(); //part 3 routine

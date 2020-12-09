@@ -8,11 +8,11 @@ class Timingwheel //add destructor, =, copyconstructor
 {
 private:
 	int size; //total number of slots in the Timingwheel
-	Partition* slots; 
+	Partition* slots; //dynamic array
 	int current_slot;
 public:
 	Timingwheel(int maxDelay = 1);
-	//~Timingwheel() { delete slots; }
+	//~Timingwheel() { delete[] slots; }
 	//Timingwheel(const Timingwheel& copy);
 	//Timingwheel& operator=(const Timingwheel& p);
 	void insert(ATM* p1);
