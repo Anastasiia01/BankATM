@@ -17,7 +17,8 @@ int main()
 	mybank.get_user_input();
 	mybank.generate_customerbase(); // Traffic Generator
 	mybank.simulate(); // System Controller
-	mybank.report(); // Statistic Keeper //print_final_statistics();
+
+	mybank.print_final_statistics();
 
 	//cout << "Please specify input file name:\n";
 	//cin >> fname;

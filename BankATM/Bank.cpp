@@ -14,10 +14,10 @@ void Bank::set_atm_num(int atm)
 	systemControl = SystemController(atmNum, maxTime);
 }
 
-void Bank::report()
+/*void Bank::report()
 {
 	statsKeeper.report(systemControl, simTime, atmNum);
-}
+}*/
 
 void Bank::generate_customerbase()
 {
@@ -31,7 +31,7 @@ void Bank::simulate()
 }
 
 void Bank::get_user_input() {
-	int ATMs = 0, time = 0;
+	int ATMs = 0, timeT = 0;
 	string fname = "";
 	cout << "Please specify input file name:\n";
     cin >> fname;
@@ -40,10 +40,10 @@ void Bank::get_user_input() {
 	cin >> ATMs; 
 	set_atm_num(ATMs);
 	cout << "Simulation time:\n";
-	cin >> time;
-	set_sim_time(time);
+	cin >> timeT;
+	set_sim_time(timeT);
 }
 
 void Bank::print_final_statistics() {
-
+	statsKeeper.report(systemControl, simTime, atmNum);
 }

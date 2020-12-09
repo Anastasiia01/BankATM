@@ -21,7 +21,6 @@ public:
 	void set_atm_num(int atm);
 	void get_user_input(); //for part 4, get all the user specified values
 	void set_sim_time(int time) { simTime = time; }
-	void report();//calls statsKeeper.report()
 	void generate_customerbase(); // trafficGen.initCustomersBase();
 	//void generate_initial_traffic();// trafficGen.initTraffic(); TODO: add later
 	void simulate();//call systemControl.startSimulation();
