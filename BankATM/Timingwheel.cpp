@@ -21,10 +21,16 @@ Timingwheel& Timingwheel::operator=(const Timingwheel& p)
 	// TODO: insert return statement here
 }*/
 
-void Timingwheel::insert(int customer_service_time, ATM* p1) {
-	
+void Timingwheel::insert(ATM* p1, int simulationTime) {
+	//TODO: get rid of service time
+	Customer* nextCust = p1->getFirst();
+	int servTime = nextCust->getserviceTime();
+	nextCust->setarrivalTime(simulationTime);
+	cout <<"Customer #" << nextCust->getID() \
+		 <<"with Service time = " << servTime \
+		 <<" started using ATM #" << p1->getNum() << endl;
 	Partition part1(p1);
-	int index = (current_slot + customer_service_time) % size;
+	int index = (current_slot + servTime) % size; //Partition is inserted in correct slot. This makes it circular
 	cout << "Index: " << index << endl;
 	Partition* current = &slots[index];
 	if (current->getATM() == nullptr) {
@@ -42,15 +48,38 @@ void Timingwheel::insert(int customer_service_time, ATM* p1) {
 	}
 }
 
-void Timingwheel::schedule()
+void Timingwheel::schedule(int simulationTime)
 {
 	//??? the statistics of the customer leaving
-	//pop the first Customer from all ATM of the Partitions in the current slot
-	//pick the new first and insert() into the timing wheel
-
+	//pop the first Customer from all ATM 
+	//of the Partitions in the current slot
+	Partition* current = &slots[current_slot];
+	Customer* servedCust;
+	Customer* nextCust;
+	ATM* curATM;
+	while (current->getATM() != nullptr) {
+		cout << simulationTime;
+		current_slot = (current_slot + 1) % size;
+		curATM = current->getATM();
+		//Removed Served customers
+		servedCust = curATM->getFirst();
+		servedCust->setserviceTime(simulationTime);
+		cout << "Customer #" << servedCust->getID() << " left ATM #" << curATM->getNum()<<endl;
+		/*TODO: Gabriel use servedCust to get all needed stats here
+		store in class variables and create get methods to access them
+		from StatisticsKeeper()
+		servedCust has proper arrived and end time that u can use*/
+		
+		curATM->delCust();//removing servedCust
+		//Add new customers to be served to the free ATM Partition:
+		insert(curATM, simulationTime);
+		current = (current->getNext());
+	}	
+	//clear_current_slot();
 }
 
 void Timingwheel::clear_current_slot() {
+	//TODO:
 	//pop the customer of the queue and start processing the new one...
 	//check the Partitions in the current slot and check their ATM numbers,
 	//assign new Partitions to the free ATMs and insert them into Timingwheel

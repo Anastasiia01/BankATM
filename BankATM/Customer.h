@@ -7,9 +7,12 @@
 #define CUSTOMER_h
 
 using namespace std;
+static int ID = 1;
+
 
 class Customer {
 private:
+	int custID;
 	map <string, Account*> accountMap; //Accout Type name is used for mapping to child account object
 	int arrivalTime, serviceTime, exitTime, timeLeft;
 
@@ -27,5 +30,6 @@ public:
 	int getTimeLeft() { return timeLeft; }
 	void setexitTime(int eTime);
 	int getexitTime();
+	int getID() { return custID; }
 };
 #endif

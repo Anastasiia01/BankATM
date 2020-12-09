@@ -2,6 +2,8 @@
 
 Customer::Customer()
 {
+	custID = ID; // starts assigning IDs from 1 and goes up using static count currentID
+	ID++;
 	arrivalTime = 0;
 	serviceTime = 0;
 	exitTime = 0;
@@ -13,6 +15,8 @@ Customer::Customer()
 
 Customer::Customer(int aTime, int sTime)
 {
+	custID = ID; // starts assigning IDs from 1 and goes up using static count currentID
+	ID++;
 	arrivalTime = aTime;
 	serviceTime = sTime;
 	timeLeft = serviceTime;

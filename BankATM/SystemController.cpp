@@ -49,9 +49,9 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 	for (auto& atm : atms) {
 		cust = base[count++];
 		atm.addCust(cust);
-		servTime = cust.getserviceTime();
-		cout << "Service time: " << servTime << endl;
-		timingWheel.insert(servTime, &atm);
+		//servTime = cust.getserviceTime();
+		//cout << "Service time: " << servTime << endl;
+		timingWheel.insert(&atm, 0);
 		cout << timingWheel << endl;
 	}
 
@@ -63,14 +63,14 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 		newCust = rand() % (dynCust + 1);
 		for (int j = 0; j < newCust; j++) {
 			ptShortestATM = getShortestATM();
-			cout << "Customer inserted into ATM# "<< ptShortestATM->getNum() << endl;
+			cout << "Customer got into queue of ATM #"<< ptShortestATM->getNum() << endl;
 			cust = base[count++];
 			ptShortestATM->addCust(cust);//TODO: enqueue customer in ATM with shortest queue (if arrived)
 		}
 		//serves current user: address cur_slot in timingWheel
+		timingWheel.schedule(i);
 		//print_status(); //print the status of the system to the screen and output file at each simulated instance.
 		//TW.clear_curr_slot(); //part 3 routine
-		//time_slot = (time_slot + 1) % maximum_number_of_time_slots;
 	}
 	//cout << timingWheel << endl;
 }
