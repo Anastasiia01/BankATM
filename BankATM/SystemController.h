@@ -13,6 +13,7 @@ private:
 	ATM* getShortestATM();
 public:
 	SystemController(int atmNum =-1, int maxDelay=-1);
+	Timingwheel getTimingWheel() { return timingWheel; }
 	void startSim(int simTime, int dynCust, vector<Customer>& base);
 	void startSim2(int simTime, int dynCust, vector<Customer>& base);
 	double getAvSerTime();

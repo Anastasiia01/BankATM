@@ -9,13 +9,16 @@ class Timingwheel //add destructor, =, copyconstructor
 private:
 	int size; //total number of slots in the Timingwheel
 	Partition* slots; //dynamic array
-	int current_slot;
-	int averageWaitingTime;
+	int current_slot, waitCount, servTimeCount;
+	int averageWaitingTime, averageServiceTime, custCount;
 public:
 	Timingwheel(int maxDelay = 1);
 	//~Timingwheel() { delete[] slots; }
 	//Timingwheel(const Timingwheel& copy);
 	//Timingwheel& operator=(const Timingwheel& p);
+	int getAvgWaitTime() { return averageWaitingTime; }
+	int getAvgServTime() { return averageServiceTime; }
+	int getCustCount() { return custCount; }
 	void insert(ATM* p1);
 	void schedule(int simulationTime);
 	void clear_current_slot(); //clears partition pointer and sets to null
