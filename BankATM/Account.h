@@ -8,13 +8,7 @@ static int currentID = 1;
 
 class Account {
 private:
-	/*A1P1S1 indicates Account # 1 Personal Account # 1 Saving (transaction) # 1
-The last number indicates the transaction number associated with that type of account.
-Alternatively, you can also use the format of A1P1S-1, where 1 is the transaction number and can
-be stored as a separate variable.*/
-
 	int accountID;
-
 	double balance; //by default assigned to zero
 	double interest; //by default assigned to zero
 	vector<Transaction> history;
