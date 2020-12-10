@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include<queue>
 #include<vector>
 #include <algorithm>
@@ -17,6 +18,7 @@ SystemController::SystemController(int atmNum, int maxDelay): timingWheel(Timing
 	AvSerTime=0;
 	countTime=0;
 	servedCust=0;
+	//ofstream output("output.txt", ios::app);
 }
 
 ATM* SystemController::getShortestATM()
@@ -34,6 +36,11 @@ ATM* SystemController::getShortestATM()
 	}
 	return withShotestQueue;
 
+}
+
+void SystemController::print_status()
+{
+	cout << timingWheel;
 }
 
 void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& base)
@@ -61,25 +68,23 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 	for (int i = 1; i <= simTime; i++) {
 		cout <<endl << "************ T = " << i <<" ************"<<endl;
 		//Adds new customers
-		newCust = rand() % (dynCust + 1);
-		for (int j = 0; j < newCust; j++) {
-			ptShortestATM = getShortestATM();
-			cust = base[count++];
-			cout << "Customer #"<< cust.getID()<< " arrived and got into queue for ATM #" << ptShortestATM->getNum() << endl;
-			cust.setarrivalTime(i);
-			ifPutWheel = ptShortestATM->addCust(cust);
-			if (ifPutWheel) {
-				timingWheel.insert(ptShortestATM);
+		if (count < base.size()) {
+			newCust = rand() % (dynCust + 1);
+			for (int j = 0; j < newCust; j++) {
+				ptShortestATM = getShortestATM();
+				cust = base[count++];
+				cout << "Customer #" << cust.getID() << " arrived and got into queue for ATM #" << ptShortestATM->getNum() << endl;
+				cust.setarrivalTime(i);
+				ifPutWheel = ptShortestATM->addCust(cust);
+				if (ifPutWheel) {
+					timingWheel.insert(ptShortestATM);
+				}
 			}
 		}
-		//cout << "Before: " << timingWheel;
 		timingWheel.schedule(i);
 		timingWheel.clear_current_slot();
-		cout << timingWheel;
+		print_status(); //print the status of the system to the screen and output file at each simulated instance.
 		timingWheel.incrementCurrent();
-
-		//print_status(); //print the status of the system to the screen and output file at each simulated instance.
-		//TW.clear_curr_slot(); //part 3 routine
 	}
 	//cout << timingWheel << endl;
 }

@@ -11,6 +11,7 @@ private:
 	double countTime;
 	int servedCust;
 	ATM* getShortestATM();
+	void print_status();
 public:
 	SystemController(int atmNum =-1, int maxDelay=-1);
 	void startSim(int simTime, int dynCust, vector<Customer>& base);

@@ -57,7 +57,9 @@ ATM* Partition::getATM()
 ostream& operator<<(ostream& out, Partition& p)
 {
     if (p.atm != nullptr) {
-        cout <<"Partition with ATM# "<< p.atm->getNum()<< "->";
+        cout <<"Partition with C"<<p.atm->getFirst()->getID()<<\
+            "("<< p.atm->getFirst()-> getserviceTime()<<")"\
+            " using ATM #" << p.atm->getNum() <<"->";
     }
     if (p.nextp != nullptr) {
         cout << *(p.nextp);
