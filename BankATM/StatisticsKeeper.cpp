@@ -22,6 +22,7 @@ void StatisticsKeeper::report(SystemController obj, int duration, int noATMS)
 	cout << "Number of ATMs is " << noATMS<<endl;
 	cout<< "Total number of customers served "<< obj.getServed() << endl;
 	cout << "The average service time is "<<obj.getAvSerTime()<<endl<<endl;
+	cout << "The average waiting time is " << endl;
 
 }
 

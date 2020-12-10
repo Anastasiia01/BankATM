@@ -77,6 +77,8 @@ void Timingwheel::schedule(int simulationTime)
 	Customer* servedCust;
 	Customer* nextCust;
 	ATM* curATM;
+	int waitCount = 0,custCount=0;
+	averageWaitingTime = 0;
 	if (current->getATM() != nullptr) 
 	{
 		while (current != nullptr) 
@@ -86,6 +88,12 @@ void Timingwheel::schedule(int simulationTime)
 			servedCust = curATM->getFirst();
 			servedCust->setexitTime(simulationTime);
 			cout << "Customer #" << servedCust->getID() << " left ATM #" << curATM->getNum() << endl;
+			int arrivalTime = servedCust->getarrivalTime();
+			int endingTime = servedCust->getexitTime();
+			int startTime = endingTime - (servedCust->getserviceTime());
+			int waitingTime = startTime - arrivalTime;
+			waitCount += waitingTime;
+			custCount++;
 			/*TODO: Gabriel use servedCust to get all needed stats here
 			store in class variables and create get methods to access them
 			from StatisticsKeeper()
@@ -95,8 +103,9 @@ void Timingwheel::schedule(int simulationTime)
 			//Add new customers to be served to the free ATM Partition:
 			insert(curATM);
 			current = (current->getNext());
-		}
+		}	
 	}
+	averageWaitingTime = waitCount / custCount;
 }
 
 

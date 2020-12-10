@@ -10,6 +10,7 @@ private:
 	int size; //total number of slots in the Timingwheel
 	Partition* slots; //dynamic array
 	int current_slot;
+	int averageWaitingTime;
 public:
 	Timingwheel(int maxDelay = 1);
 	//~Timingwheel() { delete[] slots; }
