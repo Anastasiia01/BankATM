@@ -14,10 +14,6 @@ void Bank::set_atm_num(int atm)
 	systemControl = SystemController(atmNum, maxTime);
 }
 
-/*void Bank::report()
-{
-	statsKeeper.report(systemControl, simTime, atmNum);
-}*/
 
 void Bank::generate_customerbase()
 {
@@ -45,5 +41,5 @@ void Bank::get_user_input() {
 }
 
 void Bank::print_final_statistics() {
-	statsKeeper.report(systemControl, simTime, atmNum);
+	statsKeeper.report(systemControl.getTimingWheel(), simTime, atmNum);
 }
