@@ -81,7 +81,3 @@ void SystemController::startSim(int simTime, int dynCust, vector<Customer>& base
 		timingWheel.incrementCurrent();
 	}
 }
-
-double SystemController::getAvSerTime() {
-	return AvSerTime;
-}

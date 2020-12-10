@@ -17,7 +17,6 @@ public:
 	Timingwheel getTimingWheel() { return timingWheel; }
 	void startSim(int simTime, int dynCust, vector<Customer>& base);
 	void startSim2(int simTime, int dynCust, vector<Customer>& base);
-	double getAvSerTime();
 	int getServed() { return servedCust; }
 };
 #endif
