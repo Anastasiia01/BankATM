@@ -96,9 +96,7 @@ bool Account::Withdraw(double amount)
 void Account::ApplyInterest()
 {
 	balance += balance * interest;
-	//I think the one below applies:
-	//balance +=pow(balance(1+(interest/n)),(n*time)); 
-	//refer tohttps://www.onlinemathlearning.com/simple-interest-formula.html
+
 }
 
 void Account::display()
