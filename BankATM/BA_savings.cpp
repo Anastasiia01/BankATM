@@ -10,14 +10,12 @@ bool BA_savings::Deposit(double checkAmount) {
 	return success;
 }
 
-
 bool BA_savings::Transfer(double amount, Account * receiverAccount) {
 	bool success = true;
 	BusinessAccount::Transfer(amount, receiverAccount);
 	cout << endl;
 	return success;
 }
-
 
 bool BA_savings::Withdraw(double amount) {
 	if ((int)amount % 10 != 0) {

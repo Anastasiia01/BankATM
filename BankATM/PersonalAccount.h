@@ -13,7 +13,6 @@ private:
 	string lastName;
 	int SSN; //9 digit 
 	int generateSSN();
-
 public:
 	PersonalAccount(string f ="John", string l="Black");
 };

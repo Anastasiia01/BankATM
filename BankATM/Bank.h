@@ -20,12 +20,12 @@ public:
 	//Bank();
 	void set_inputfile(string file);
 	void set_atm_num(int atm);
-	void get_user_input(); //for part 4, get all the user specified values
+	void get_user_input(); //get all the user specified values
 	void set_sim_time(int time) { simTime = time; }
-	void generate_customerbase(); // trafficGen.initCustomersBase();
-	//void generate_initial_traffic();// trafficGen.initTraffic(); TODO: add later
-	void simulate();//call systemControl.startSimulation();
-	void print_final_statistics(); //for part 4, prints  print the final report of the simulation
+	void generate_customerbase(); 
+	//void generate_initial_traffic();
+	void simulate();
+	void print_final_statistics(); //prints the final report of the simulation
 	
 
 };

@@ -16,7 +16,7 @@ public:
 	int getCashLeft() { return cashLeft; }
 	bool addCust(Customer cust); //enqueue Customer
 	void delCust() { custs.pop(); }//deque Customer
-	Customer* getFirst();
+	Customer* getFirst();//return first Customer in queue or nullptr if not there
 	int getCustNum() { return custs.size(); }
 	//refillCash()
 

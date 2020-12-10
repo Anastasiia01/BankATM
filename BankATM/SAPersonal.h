@@ -12,14 +12,11 @@
 #define SAPERSONAL_H_
 using namespace std;
 
-class SAPersonal: public PersonalAccount //Modifiy according to parent class name given 
+class SAPersonal: public PersonalAccount
 {
 private:
-
 	double frozenamount;
 	double depositInterest;
-
-
 public:
 	SAPersonal();
 	SAPersonal(string fn, string ln);
@@ -29,7 +26,6 @@ public:
 	void ApplyInterest();
 	void activateFrozen();
 	void display();
-	//void Transaction();
 };
 #endif
 

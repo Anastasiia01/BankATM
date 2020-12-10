@@ -17,20 +17,7 @@ int main()
 	mybank.get_user_input();
 	mybank.generate_customerbase(); // Traffic Generator
 	mybank.simulate(); // System Controller
-
-	mybank.print_final_statistics();
-
-	//cout << "Please specify input file name:\n";
-	//cin >> fname;
-	//mybank.set_inputfile(fname);
-	//cout << "Number of ATMs:\n";
-	//cin >> ATMs; // input 1 for this part
-	//mybank.set_atm_num(ATMs); 
-	//cout << "Simulation time:\n";
-	//cin >> time;
-	//mybank.set_sim_time(time);
-	//mybank.generate_initial_traffic(); // Traffic Generator
-	
+	mybank.print_final_statistics(); //StatisticsKeeper
 	
 	// Check of Timingwheel insert():
 	/*Timingwheel t(12);

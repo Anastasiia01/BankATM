@@ -8,9 +8,6 @@ Customer::Customer()
 	serviceTime = 0;
 	exitTime = 0;
 	timeLeft = serviceTime;
-	//accountMap = { {"PSA",nullptr},{"PCA",nullptr},{"PMM",nullptr},
-	//{"PCD",nullptr}, {"BSA",nullptr}, {"BCA",nullptr}, 
-	//{"BHVC",nullptr}, {"BFC",nullptr} };
 }
 
 Customer::Customer(int aTime, int sTime)

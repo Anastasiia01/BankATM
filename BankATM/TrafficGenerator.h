@@ -14,7 +14,6 @@ using namespace std;
 
 class TrafficGenerator {
 private:
-	//customer shoudl have a service time
 	int customerBase;
 	int initCustomersNum;
 	int countTime;

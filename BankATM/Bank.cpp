@@ -23,7 +23,7 @@ void Bank::generate_customerbase()
 
 void Bank::simulate()
 {
-	systemControl.startSim2(simTime, trafficGen.getDynCust(), allCustomers);
+	systemControl.startSim(simTime, trafficGen.getDynCust(), allCustomers);
 }
 
 void Bank::get_user_input() {

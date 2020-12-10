@@ -19,6 +19,5 @@ public:
 	void startSim2(int simTime, int dynCust, vector<Customer>& base);
 	double getAvSerTime();
 	int getServed() { return servedCust; }
-
 };
 #endif

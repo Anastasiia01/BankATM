@@ -3,8 +3,7 @@
 #include "Partition.h"
 
 using namespace std;
-//Timingwheel is an algorithm of O(1) complexity
-class Timingwheel //add destructor, =, copyconstructor
+class Timingwheel
 {
 private:
 	int size; //total number of slots in the Timingwheel

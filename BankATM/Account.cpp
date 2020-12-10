@@ -9,24 +9,24 @@ using namespace std;
 
 Account::Account(double bal)
 {
-	accountID = currentID; // starts assigning IDs from 1 and goes up using static count currentID
+	//accountID starts assigning IDs from 1 and goes up using static count currentID
+	accountID = currentID; 
 	currentID++;
 	balance = bal;
 	interest = 0;
 }
 
-
 bool Account::Deposit(double checkAmount)
 {
 	//call this deposit from the child class to reuse the code
 
-	//Next two lines add transaction to history
+	//add transaction to history:
 	Transaction trans(checkAmount, TransactionType::Deposit);
 	history.push_back(trans); //need to get const
 
 	cout << "Balance before the deposit: " << balance << endl;
 	cout << "Amount to be deposited: " << checkAmount << endl;
-	//do deposit
+	//do deposit:
 	if (checkAmount > 0) {
 		balance += checkAmount;
 		cout << "Balance after deposit: " << balance << endl;
@@ -40,7 +40,7 @@ bool Account::Deposit(double checkAmount)
 
 bool Account::Transfer(double amount, Account* receiverAccount)
 {
-	//Next two lines add transaction to history
+	//add transaction to history
 	Transaction trans(amount, TransactionType::Transfer);
 	history.push_back(trans);
 
@@ -69,7 +69,7 @@ bool Account::Transfer(double amount, Account* receiverAccount)
 
 bool Account::Withdraw(double amount)
 {
-	//Next TWO lines add transaction to history
+	//add transaction to history
 	Transaction trans(amount, TransactionType::Withdraw);
 	history.push_back(trans);
 
@@ -95,12 +95,10 @@ bool Account::Withdraw(double amount)
 
 void Account::ApplyInterest()
 {
-	//TODO: review the logic of this method
 	balance += balance * interest;
 	//I think the one below applies:
 	//balance +=pow(balance(1+(interest/n)),(n*time)); 
 	//refer tohttps://www.onlinemathlearning.com/simple-interest-formula.html
-
 }
 
 void Account::display()

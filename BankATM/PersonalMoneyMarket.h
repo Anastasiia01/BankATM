@@ -21,13 +21,11 @@ private:
 	double minBAlanceForInterest;
 	double numWithdrawalDone;
 public:
-	//uses default values, so constructor can be called without any parameters
 	PersonalMoneyMarket(string fn ="John", string ln ="Snow");
 	bool Deposit(double checkAmount); //deposit check
 	bool Transfer(double amount, Account* receiverAccount);
 	bool Withdraw(double amount);
 	void ApplyInterest();
 	void display();
-
 };
 #endif

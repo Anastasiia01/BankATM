@@ -31,7 +31,6 @@ TrafficGenerator::TrafficGenerator(string file)
 			{80, "Withdraw"},
 			{100, "Tranfer"}
 	};*/
-
 }
 
 void TrafficGenerator::parseFile(string file)
@@ -50,7 +49,6 @@ void TrafficGenerator::parseFile(string file)
 		input >> persAccountPercentile;
 	}
 	input >> typeName >> typeName;//ignore Business line
-	//val1 = val2 = 0;
 	int pSum = 0;
 	int bSum = 0;
 	while (input.good())
@@ -205,7 +203,6 @@ vector<Customer> TrafficGenerator::initCustomerBase()
 		Customer cust = generateCust();
 		allCustomers.push_back(cust);
 	}
-	//cout << "Generated customer base: " << allCustomers.size() << endl;
 	return allCustomers;
 
 }

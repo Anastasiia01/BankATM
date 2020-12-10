@@ -15,7 +15,6 @@ private:
 	int custID;
 	map <string, Account*> accountMap; //Accout Type name is used for mapping to child account object
 	int arrivalTime, serviceTime, exitTime, timeLeft;
-
 public:
 	Customer();
 	Customer(int aTime, int sTime);

@@ -15,10 +15,9 @@
 
 using namespace std;
 
-class FCABusiness : public BA_checking //Modifiy according to parent class name given  
+class FCABusiness : public BA_checking 
 {
 private:
-
 	int numWithdrawalDone;
 	int numWithdrawalAllowed;
 	int numTransferDone;
@@ -40,8 +39,5 @@ public:
 	void ApplyInterest();
 	void BalanceInquiry();
 	void display();
-	//void Transaction();
-
-
 };
 #endif

@@ -18,12 +18,10 @@ using namespace std;
 class CAPersonal: public PersonalAccount //Modifiy according to parent class name given 
 {
 private:
-
 	string transactionID;
 	double depositeAmount;
 	double withdrawAmount;
 	double transferAmount;
-
 public:
 	CAPersonal(string fn="Kate", string ln="Green");
 	bool Deposit(double checkAmount);
@@ -32,7 +30,6 @@ public:
 	void ApplyInterest();
 	void BalanceInquiry();
 	void display();
-	//void Transaction();
 };
 #endif
 

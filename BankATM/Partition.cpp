@@ -9,36 +9,6 @@ Partition::Partition(ATM* _atm)
     nextp = nullptr;
 }
 
-/*
-Partition::~Partition()
-{
-    //TODO
-}*/
-
-
-/*Partition::Partition(const Partition& copy)
-{
-    atm = &(*copy.atm);
-    if (copy.nextp == nullptr) {
-        nextp = nullptr;
-    }
-    else {
-        nextp = new Partition(*copy.nextp);
-    }
-}
-
-Partition& Partition::operator=(const Partition& p)
-{
-    atm = &(*p.atm);
-    if (p.nextp == nullptr) {
-        nextp = nullptr;
-    }
-    else {
-        nextp = &(*p.nextp);
-    }
-    return *this;
-}*/
-
 Partition* Partition::getNext()
 {
     return nextp;

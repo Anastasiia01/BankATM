@@ -10,8 +10,6 @@ class Transaction {
 private:
 	double amount;
 	TransactionType type;
-	//timestamp??
-	//Deposit=1, Transfer=2, Withdraw=3
 public:
 	Transaction(double amount, TransactionType transactionType = TransactionType::Deposit);//Withdraw by default
 };

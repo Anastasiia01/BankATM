@@ -10,12 +10,10 @@
 #include "BA_checking.h"
 using namespace std;
 
-class HVCABusiness : public BA_checking //Modifiy according to parent class name given 
+class HVCABusiness : public BA_checking 
 {
 private:
-
 	double transacationFee;
-
 public:
 	HVCABusiness(string companyName="University of Bridgeport");
 	bool Deposit(double checkAmount);
@@ -24,6 +22,4 @@ public:
 	bool Transfer(double amount, Account * receiverAccount);
 	void ApplyInterest();
 	void display();
-	//void Transaction();
-
 };
