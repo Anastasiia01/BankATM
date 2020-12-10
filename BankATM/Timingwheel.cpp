@@ -101,12 +101,6 @@ void Timingwheel::schedule(int simulationTime)
 			waitCount += waitingTime; 
 			servTimeCount += servTime; 
 			custCount++;
-
-			/*TODO: Gabriel use servedCust to get all needed stats here
-			store in class variables and create get methods to access them
-			from StatisticsKeeper()
-			servedCust has proper arrived and end time that u can use*/
-
 			curATM->delCust();//removing servedCust
 			//Add new customers to be served to the free ATM Partition:
 			insert(curATM);
@@ -114,9 +108,7 @@ void Timingwheel::schedule(int simulationTime)
 
 		}	
 		averageWaitingTime = waitCount / custCount;
-		cout << "average wait time " << averageWaitingTime << endl;
 		averageServiceTime = servTimeCount / custCount;
-		cout << "average service time " << averageServiceTime << endl;
 	}
 
 }
