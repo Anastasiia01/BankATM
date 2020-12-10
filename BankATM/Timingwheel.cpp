@@ -78,7 +78,7 @@ void Timingwheel::schedule(int simulationTime)
 	Customer* nextCust;
 	ATM* curATM;
 	int waitCount = 0,custCount=0;
-	int averageWaitingTime = 0;
+	averageWaitingTime = 0;
 	if (current->getATM() != nullptr) 
 	{
 		while (current != nullptr) 
@@ -103,9 +103,9 @@ void Timingwheel::schedule(int simulationTime)
 			//Add new customers to be served to the free ATM Partition:
 			insert(curATM);
 			current = (current->getNext());
-		}
-		averageWaitingTime = waitCount / custCount;
+		}	
 	}
+	averageWaitingTime = waitCount / custCount;
 }
 
 
