@@ -10,7 +10,6 @@ using namespace std;
 //list call to Timingwheel
 SystemController::SystemController(int atmNum, int maxDelay): timingWheel(Timingwheel(maxDelay))
 {
-	//cout << "TW: "<<endl<<timingWheel << endl;
 	for (int i = 1; i <= atmNum; i++) {
 		ATM temp(i);
 		atms.push_back(temp);
@@ -54,8 +53,10 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 		timingWheel.insert(&atm);
 	}
 	cout << endl << "************ T = 0 ************" << endl << timingWheel << endl;
+	timingWheel.incrementCurrent();
 	int newCust;
 	ATM* ptShortestATM;
+	bool ifPutWheel;
 	cout << endl<< "Starting simulation..." << endl;
 	for (int i = 1; i <= simTime; i++) {
 		cout <<endl << "************ T = " << i <<" ************"<<endl;
@@ -66,12 +67,17 @@ void SystemController::startSim2(int simTime, int dynCust, vector<Customer>& bas
 			cust = base[count++];
 			cout << "Customer #"<< cust.getID()<< " arrived and got into queue for ATM #" << ptShortestATM->getNum() << endl;
 			cust.setarrivalTime(i);
-			ptShortestATM->addCust(cust);
+			ifPutWheel = ptShortestATM->addCust(cust);
+			if (ifPutWheel) {
+				timingWheel.insert(ptShortestATM);
+			}
 		}
 		//cout << "Before: " << timingWheel;
 		timingWheel.schedule(i);
 		timingWheel.clear_current_slot();
 		cout << timingWheel;
+		timingWheel.incrementCurrent();
+
 		//print_status(); //print the status of the system to the screen and output file at each simulated instance.
 		//TW.clear_curr_slot(); //part 3 routine
 	}

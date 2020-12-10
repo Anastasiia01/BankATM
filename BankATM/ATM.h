@@ -14,9 +14,9 @@ public:
 	ATM(int num = -1, int cash = 10000) { number = num; cashLeft = cash; }
 	int getNum() { return number; }
 	int getCashLeft() { return cashLeft; }
-	void addCust(Customer cust) { custs.push(cust); }//enqueue Customer
+	bool addCust(Customer cust); //enqueue Customer
 	void delCust() { custs.pop(); }//deque Customer
-	Customer* getFirst() { return &(custs.front()); }
+	Customer* getFirst();
 	int getCustNum() { return custs.size(); }
 	//refillCash()
 

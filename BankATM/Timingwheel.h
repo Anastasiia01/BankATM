@@ -18,6 +18,7 @@ public:
 	void insert(ATM* p1);
 	void schedule(int simulationTime);
 	void clear_current_slot(); //clears partition pointer and sets to null
+	void incrementCurrent() { current_slot = (current_slot + 1) % size; }
 	friend ostream& operator<<(ostream&, Timingwheel&);
 };
 

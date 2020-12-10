@@ -43,6 +43,10 @@ Timingwheel::Timingwheel(int maxDelay)
 void Timingwheel::insert(ATM* p1) {
 	//TODO: get rid of service time
 	Customer* nextCust = p1->getFirst();
+	if (nextCust == nullptr) {
+		cout << "ATM #" << p1->getNum() << " has EMPTY queue. No one is serving."<<endl;
+		return;
+	}
 	int servTime = nextCust->getserviceTime();
 	cout <<"Customer #" << nextCust->getID() \
 		 <<" with Service time = " << servTime \
@@ -69,7 +73,6 @@ void Timingwheel::insert(ATM* p1) {
 
 void Timingwheel::schedule(int simulationTime)
 {
-	current_slot = (current_slot + 1) % size;
 	Partition* current = &slots[current_slot];
 	Customer* servedCust;
 	Customer* nextCust;
@@ -95,6 +98,8 @@ void Timingwheel::schedule(int simulationTime)
 		}
 	}
 }
+
+
 
 void Timingwheel::clear_current_slot() {
 	//cout << "Clearing current slot - SLOT #" << current_slot;
